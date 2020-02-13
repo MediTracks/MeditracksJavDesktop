@@ -228,4 +228,25 @@ public class ClsUpdate_Model {
         return false;
     }    
     
+    //IDelete deletes rows with id int format
+    public static boolean fx_IDelete(String dbTable, int tbId) throws SQLException, ClassNotFoundException, Exception
+    {
+        PreparedStatement ps = DbConnect.connectDb().prepareStatement("DELETE FROM "+dbTable+" WHERE id = ?");
+        ps.setInt(1, tbId);
+        ps.executeUpdate();
+        ps.close();
+        DbConnect.disconnectDb();
+        return true;
+    }
+    
+    //IDelete deletes rows with String int format
+    public static boolean fx_SDelete(String dbTable, String tbId) throws SQLException, ClassNotFoundException, Exception
+    {
+        PreparedStatement ps = DbConnect.connectDb().prepareStatement("DELETE FROM "+dbTable+" WHERE id = ?");
+        ps.setString(1, tbId);
+        ps.executeUpdate();
+        ps.close();
+        DbConnect.disconnectDb();
+        return true;
+    }
 }
