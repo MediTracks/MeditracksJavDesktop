@@ -331,21 +331,7 @@ public class ParamFRM extends javax.swing.JPanel {
 
         jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        tStatut.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tStatut.setColumnControlVisible(true);
         tStatut.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        tStatut.setRowHeight(20);
-        tStatut.setShowGrid(true);
         tStatut.setShowVerticalLines(false);
         jScrollPane4.setViewportView(tStatut);
 
@@ -506,21 +492,7 @@ public class ParamFRM extends javax.swing.JPanel {
 
         jPanel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        tType.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tType.setColumnControlVisible(true);
         tType.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        tType.setRowHeight(20);
-        tType.setShowGrid(true);
         tType.setShowVerticalLines(false);
         jScrollPane5.setViewportView(tType);
 
@@ -680,21 +652,7 @@ public class ParamFRM extends javax.swing.JPanel {
 
         jPanel15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        tZone.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tZone.setColumnControlVisible(true);
         tZone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        tZone.setRowHeight(20);
-        tZone.setShowGrid(true);
         tZone.setShowVerticalLines(false);
         jScrollPane6.setViewportView(tZone);
 
@@ -861,21 +819,7 @@ public class ParamFRM extends javax.swing.JPanel {
 
         jPanel27.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jXTable9.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jXTable9.setColumnControlVisible(true);
         jXTable9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTable9.setRowHeight(20);
-        jXTable9.setShowGrid(true);
         jXTable9.setShowVerticalLines(false);
         jScrollPane9.setViewportView(jXTable9);
 
@@ -1042,21 +986,7 @@ public class ParamFRM extends javax.swing.JPanel {
 
         jPanel31.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jXTable10.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jXTable10.setColumnControlVisible(true);
         jXTable10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTable10.setRowHeight(20);
-        jXTable10.setShowGrid(true);
         jXTable10.setShowVerticalLines(false);
         jScrollPane10.setViewportView(jXTable10);
 
@@ -1237,21 +1167,7 @@ public class ParamFRM extends javax.swing.JPanel {
 
         jPanel35.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jXTable11.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jXTable11.setColumnControlVisible(true);
         jXTable11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTable11.setRowHeight(20);
-        jXTable11.setShowGrid(true);
         jXTable11.setShowVerticalLines(false);
         jScrollPane11.setViewportView(jXTable11);
 
@@ -1434,21 +1350,7 @@ public class ParamFRM extends javax.swing.JPanel {
 
         jPanel43.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jXTable13.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jXTable13.setColumnControlVisible(true);
         jXTable13.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTable13.setRowHeight(20);
-        jXTable13.setShowGrid(true);
         jXTable13.setShowVerticalLines(false);
         jScrollPane13.setViewportView(jXTable13);
 
@@ -1631,21 +1533,7 @@ public class ParamFRM extends javax.swing.JPanel {
 
         jPanel47.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jXTable14.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jXTable14.setColumnControlVisible(true);
         jXTable14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTable14.setRowHeight(20);
-        jXTable14.setShowGrid(true);
         jXTable14.setShowVerticalLines(false);
         jScrollPane14.setViewportView(jXTable14);
 
@@ -1826,21 +1714,7 @@ public class ParamFRM extends javax.swing.JPanel {
 
         jPanel51.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jXTable15.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jXTable15.setColumnControlVisible(true);
         jXTable15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTable15.setRowHeight(20);
-        jXTable15.setShowGrid(true);
         jXTable15.setShowVerticalLines(false);
         jScrollPane15.setViewportView(jXTable15);
 
