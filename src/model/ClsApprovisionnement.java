@@ -20,12 +20,13 @@ public class ClsApprovisionnement  implements IActionManager{
     private ClsFournisseur fournisseur;
     private ClsDepot depot;
     private String ugs;
-    private double quantite, cout_total;
+    private int quantite;
+    private double cout_total;
 
     public ClsApprovisionnement() {
     }
 
-    public ClsApprovisionnement(String code_approvisionnement, Date date_approvisionnement, Date date_fabrication, Date date_expiration, ClsProduit produit, ClsFournisseur fournisseur, ClsDepot depot, String ugs, double quantite, double cout_total) {
+    public ClsApprovisionnement(String code_approvisionnement, Date date_approvisionnement, Date date_fabrication, Date date_expiration, ClsProduit produit, ClsFournisseur fournisseur, ClsDepot depot, String ugs, int quantite, double cout_total) {
         this.code_approvisionnement = code_approvisionnement;
         this.date_approvisionnement = date_approvisionnement;
         this.date_fabrication = date_fabrication;
@@ -37,6 +38,8 @@ public class ClsApprovisionnement  implements IActionManager{
         this.quantite = quantite;
         this.cout_total = cout_total;
     }
+
+    
 
     public String getCode_approvisionnement() {
         return code_approvisionnement;
@@ -102,13 +105,15 @@ public class ClsApprovisionnement  implements IActionManager{
         this.ugs = ugs;
     }
 
-    public double getQuantite() {
+    public int getQuantite() {
         return quantite;
     }
 
-    public void setQuantite(double quantite) {
+    public void setQuantite(int quantite) {
         this.quantite = quantite;
     }
+
+    
 
     public double getCout_total() {
         return cout_total;

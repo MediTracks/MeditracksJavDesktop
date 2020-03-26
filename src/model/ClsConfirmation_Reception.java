@@ -12,7 +12,7 @@ import java.sql.Date;
  * @author Brain
  */
 public class ClsConfirmation_Reception implements IActionManager {
-    private ClsDistribution distribution;
+    private ClsCommandes commande;
     private Date date_confirmation;
     private double qte_recue;
     private String observations;
@@ -20,21 +20,23 @@ public class ClsConfirmation_Reception implements IActionManager {
     public ClsConfirmation_Reception() {
     }
 
-    public ClsConfirmation_Reception(ClsDistribution distribution, Date date_confirmation, double qte_recue, String observations) {
-        this.distribution = distribution;
+    public ClsConfirmation_Reception(ClsCommandes commande, Date date_confirmation, double qte_recue, String observations) {
+        this.commande = commande;
         this.date_confirmation = date_confirmation;
         this.qte_recue = qte_recue;
         this.observations = observations;
     }
 
-    public ClsDistribution getDistribution() {
-        return distribution;
+    public ClsCommandes getCommande() {
+        return commande;
     }
 
-    public void setDistribution(ClsDistribution distribution) {
-        this.distribution = distribution;
+    public void setCommande(ClsCommandes commande) {
+        this.commande = commande;
     }
 
+    
+    
     public Date getDate_confirmation() {
         return date_confirmation;
     }

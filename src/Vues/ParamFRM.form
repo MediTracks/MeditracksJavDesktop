@@ -340,20 +340,9 @@
                   <SubComponents>
                     <Component class="org.jdesktop.swingx.JXTable" name="tStatut">
                       <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="columnControlVisible" type="boolean" value="true"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
                         </Property>
-                        <Property name="rowHeight" type="int" value="20"/>
-                        <Property name="showGrid" type="boolean" value="true"/>
                         <Property name="showVerticalLines" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -656,20 +645,9 @@
                   <SubComponents>
                     <Component class="org.jdesktop.swingx.JXTable" name="tType">
                       <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="columnControlVisible" type="boolean" value="true"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
                         </Property>
-                        <Property name="rowHeight" type="int" value="20"/>
-                        <Property name="showGrid" type="boolean" value="true"/>
                         <Property name="showVerticalLines" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -971,20 +949,9 @@
                   <SubComponents>
                     <Component class="org.jdesktop.swingx.JXTable" name="tZone">
                       <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="columnControlVisible" type="boolean" value="true"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
                         </Property>
-                        <Property name="rowHeight" type="int" value="20"/>
-                        <Property name="showGrid" type="boolean" value="true"/>
                         <Property name="showVerticalLines" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -1310,20 +1277,9 @@
                   <SubComponents>
                     <Component class="org.jdesktop.swingx.JXTable" name="jXTable9">
                       <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="columnControlVisible" type="boolean" value="true"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
                         </Property>
-                        <Property name="rowHeight" type="int" value="20"/>
-                        <Property name="showGrid" type="boolean" value="true"/>
                         <Property name="showVerticalLines" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -1649,20 +1605,9 @@
                   <SubComponents>
                     <Component class="org.jdesktop.swingx.JXTable" name="jXTable10">
                       <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="columnControlVisible" type="boolean" value="true"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
                         </Property>
-                        <Property name="rowHeight" type="int" value="20"/>
-                        <Property name="showGrid" type="boolean" value="true"/>
                         <Property name="showVerticalLines" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -2015,20 +1960,9 @@
                   <SubComponents>
                     <Component class="org.jdesktop.swingx.JXTable" name="jXTable11">
                       <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="columnControlVisible" type="boolean" value="true"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
                         </Property>
-                        <Property name="rowHeight" type="int" value="20"/>
-                        <Property name="showGrid" type="boolean" value="true"/>
                         <Property name="showVerticalLines" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -2381,20 +2315,9 @@
                   <SubComponents>
                     <Component class="org.jdesktop.swingx.JXTable" name="jXTable13">
                       <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="columnControlVisible" type="boolean" value="true"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
                         </Property>
-                        <Property name="rowHeight" type="int" value="20"/>
-                        <Property name="showGrid" type="boolean" value="true"/>
                         <Property name="showVerticalLines" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -2732,20 +2655,9 @@
                   <SubComponents>
                     <Component class="org.jdesktop.swingx.JXTable" name="jXTable14">
                       <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="columnControlVisible" type="boolean" value="true"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
                         </Property>
-                        <Property name="rowHeight" type="int" value="20"/>
-                        <Property name="showGrid" type="boolean" value="true"/>
                         <Property name="showVerticalLines" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -3083,20 +2995,9 @@
                   <SubComponents>
                     <Component class="org.jdesktop.swingx.JXTable" name="jXTable15">
                       <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                          </Table>
-                        </Property>
-                        <Property name="columnControlVisible" type="boolean" value="true"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="0"/>
                         </Property>
-                        <Property name="rowHeight" type="int" value="20"/>
-                        <Property name="showGrid" type="boolean" value="true"/>
                         <Property name="showVerticalLines" type="boolean" value="false"/>
                       </Properties>
                     </Component>
