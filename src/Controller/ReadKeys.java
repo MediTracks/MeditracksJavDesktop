@@ -74,19 +74,19 @@ public class ReadKeys
             
             if(!"".equals(getServer()) | !"".equals(getUser()) | !"".equals(getPassword()) | !"".equals(getDatabase()))
             {
-                byte[] s = new sun.misc.BASE64Decoder().decodeBuffer(Advapi32Util.registryGetStringValue(HKEY_CURRENT_USER, "Software\\brain_EntrepotFNC\\Donnees", "server"));
+                byte[] s = new sun.misc.BASE64Decoder().decodeBuffer(Advapi32Util.registryGetStringValue(HKEY_CURRENT_USER, "Software\\brain_Meditracks\\Donnees", "server"));
                 byte[] serv = Decryp.doFinal(s);
                 setServer(new String(serv,"UTF-8"));
                 
-                byte[] us = new sun.misc.BASE64Decoder().decodeBuffer(Advapi32Util.registryGetStringValue(HKEY_CURRENT_USER, "Software\\brain_EntrepotFNC\\Donnees", "user"));
+                byte[] us = new sun.misc.BASE64Decoder().decodeBuffer(Advapi32Util.registryGetStringValue(HKEY_CURRENT_USER, "Software\\brain_Meditracks\\Donnees", "user"));
                 byte[] usr = Decryp.doFinal(us);
                 setUser(new String(usr,"UTF-8"));
                 
-                byte[] pw = new sun.misc.BASE64Decoder().decodeBuffer(Advapi32Util.registryGetStringValue(HKEY_CURRENT_USER, "Software\\brain_EntrepotFNC\\Donnees", "password"));
+                byte[] pw = new sun.misc.BASE64Decoder().decodeBuffer(Advapi32Util.registryGetStringValue(HKEY_CURRENT_USER, "Software\\brain_Meditracks\\Donnees", "password"));
                 byte[] pd = Decryp.doFinal(pw);
                 setPassword(new String(pd,"UTF-8"));
                 
-                byte[] bs = new sun.misc.BASE64Decoder().decodeBuffer(Advapi32Util.registryGetStringValue(HKEY_CURRENT_USER, "Software\\brain_EntrepotFNC\\Donnees", "database"));
+                byte[] bs = new sun.misc.BASE64Decoder().decodeBuffer(Advapi32Util.registryGetStringValue(HKEY_CURRENT_USER, "Software\\brain_Meditracks\\Donnees", "database"));
                 byte[] data = Decryp.doFinal(bs);
                 setDatabase(new String(data,"UTF-8"));               
                 

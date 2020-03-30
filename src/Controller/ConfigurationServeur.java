@@ -87,15 +87,15 @@ public class ConfigurationServeur
     {
         try 
         {
-            if(!Advapi32Util.registryKeyExists(HKEY_CURRENT_USER, "Software\\brain_EntrepotFNC"))
+            if(!Advapi32Util.registryKeyExists(HKEY_CURRENT_USER, "Software\\brain_Meditracks"))
             {
-                Advapi32Util.registryCreateKey(HKEY_CURRENT_USER, "Software\\brain_EntrepotFNC");
-                Advapi32Util.registryCreateKey(HKEY_CURRENT_USER, "Software\\brain_EntrepotFNC\\Donnees");
+                Advapi32Util.registryCreateKey(HKEY_CURRENT_USER, "Software\\brain_Meditracks");
+                Advapi32Util.registryCreateKey(HKEY_CURRENT_USER, "Software\\brain_Meditracks\\Donnees");
             }
             else
             {
-                if(!Advapi32Util.registryKeyExists(HKEY_CURRENT_USER, "Software\\brain_EntrepotFNC\\Donnees"))
-                    Advapi32Util.registryCreateKey(HKEY_CURRENT_USER, "Software\\brain_EntrepotFNC\\Donnees");
+                if(!Advapi32Util.registryKeyExists(HKEY_CURRENT_USER, "Software\\brain_Meditracks\\Donnees"))
+                    Advapi32Util.registryCreateKey(HKEY_CURRENT_USER, "Software\\brain_Meditracks\\Donnees");
             }
             return true;
         } 
@@ -129,10 +129,10 @@ public class ConfigurationServeur
             byte[] databas = Crypt.doFinal(data);
             database = new sun.misc.BASE64Encoder().encode(databas);
             
-            Advapi32Util.registrySetStringValue(HKEY_CURRENT_USER, "Software\\brain_EntrepotFNC\\Donnees", "server", servername);
-            Advapi32Util.registrySetStringValue(HKEY_CURRENT_USER, "Software\\brain_EntrepotFNC\\Donnees", "user", username);
-            Advapi32Util.registrySetStringValue(HKEY_CURRENT_USER, "Software\\brain_EntrepotFNC\\Donnees", "password", password);
-            Advapi32Util.registrySetStringValue(HKEY_CURRENT_USER, "Software\\brain_EntrepotFNC\\Donnees", "database", database);
+            Advapi32Util.registrySetStringValue(HKEY_CURRENT_USER, "Software\\brain_Meditracks\\Donnees", "server", servername);
+            Advapi32Util.registrySetStringValue(HKEY_CURRENT_USER, "Software\\brain_Meditracks\\Donnees", "user", username);
+            Advapi32Util.registrySetStringValue(HKEY_CURRENT_USER, "Software\\brain_Meditracks\\Donnees", "password", password);
+            Advapi32Util.registrySetStringValue(HKEY_CURRENT_USER, "Software\\brain_Meditracks\\Donnees", "database", database);
          
             return true;
         } 

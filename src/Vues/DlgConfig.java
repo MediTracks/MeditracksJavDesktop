@@ -60,13 +60,13 @@ public class DlgConfig extends javax.swing.JDialog {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brain/gui/img/config_white.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/config_white.png"))); // NOI18N
         jLabel1.setText("Configuration Serveur");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brain/gui/img/close.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/close.png"))); // NOI18N
         jLabel8.setToolTipText("Fermer");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -143,7 +143,7 @@ public class DlgConfig extends javax.swing.JDialog {
         dropShadowBorder5.setShowRightShadow(false);
         Txt_DB.setBorder(dropShadowBorder5);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brain/gui/img/accept.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/accept.png"))); // NOI18N
         jLabel7.setText("Sauvegarder");
         org.jdesktop.swingx.border.DropShadowBorder dropShadowBorder6 = new org.jdesktop.swingx.border.DropShadowBorder();
         dropShadowBorder6.setShowLeftShadow(true);

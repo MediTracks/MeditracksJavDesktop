@@ -17,47 +17,45 @@ import javax.swing.JOptionPane;
 public class frmLogin extends javax.swing.JFrame {
 
     public static String accred = "";
+
     /**
      * Creates new form frmLogin
      */
     public frmLogin() {
         initComponents();
-        this.setLocationRelativeTo(null);        
+        this.setLocationRelativeTo(null);
         lbMessage.setVisible(false);
     }
-    
-    private void signIn(String username, String password)
-    {
+
+    private void signIn(String username, String password) {
         lbMessage.setVisible(false);
         try {
-            PreparedStatement ps = DbConnect.connectDb().prepareStatement("SELECT * FROM tUser WHERE uName = ? AND uPass = ?");
+            PreparedStatement ps = DbConnect.connectDb().prepareStatement("SELECT * FROM t_login WHERE nom_utilisateur = ? AND mot_de_passe = ?");
             ps.setString(1, username);
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                if (username.equals(rs.getString("uName")) && password.equals(rs.getString("uPass"))) {
+                if (username.equals(rs.getString("nom_utilisateur")) && password.equals(rs.getString("mot_de_passe"))) {
                     //recuperation de l'accreditation du user connecté
-                    accred = rs.getString("uAccredition");
+                    accred = rs.getString("niveau_acces");
                     //passation to FrmMain
                     MenuFRM.user_receiver = username;
                     MenuFRM.accred_receiver = accred;
                     
                     new MenuFRM().setVisible(true);
                     this.setVisible(false);
-                }
-                                 
+                }                                 
             }
             else{
                 lbMessage.setVisible(true);
-            }                      
-        } 
-        catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erreur Login: \n"+e.getMessage(), "Erreur Login", JOptionPane.WARNING_MESSAGE);
+            }             
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur Login: \n" + e.getMessage(),
+                    "Erreur Login", JOptionPane.WARNING_MESSAGE);
         }
-        
+
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -107,6 +105,7 @@ public class frmLogin extends javax.swing.JFrame {
         org.jdesktop.swingx.border.DropShadowBorder dropShadowBorder2 = new org.jdesktop.swingx.border.DropShadowBorder();
         dropShadowBorder2.setShowRightShadow(false);
         txtPassword.setBorder(dropShadowBorder2);
+        txtPassword.setEchoChar('\u2022');
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);
@@ -128,7 +127,7 @@ public class frmLogin extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("UMOJA BUSINESS Login");
+        jLabel2.setText("Med!Tracks");
         org.jdesktop.swingx.border.DropShadowBorder dropShadowBorder3 = new org.jdesktop.swingx.border.DropShadowBorder();
         dropShadowBorder3.setShowRightShadow(false);
         jLabel2.setBorder(dropShadowBorder3);
@@ -140,7 +139,15 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel4.setText("Username");
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brain/gui/img/eye_2.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/eye_2.png"))); // NOI18N
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel7MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -190,7 +197,7 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brain/gui/img/close.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/close.png"))); // NOI18N
         jLabel5.setToolTipText("Fermer");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -207,7 +214,7 @@ public class frmLogin extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brain/gui/img/config_white.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/config_white.png"))); // NOI18N
         jLabel6.setText("Config");
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -294,13 +301,16 @@ public class frmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-    System.exit(7);
+        System.exit(7);
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         //code here to testLogin Data
         signIn(txtUsername.getText(), txtPassword.getText());
-//        lbMessage.setVisible(true);
+
+
+//        new MenuFRM().setVisible(true);
+//        this.setVisible(false);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
@@ -314,6 +324,14 @@ public class frmLogin extends javax.swing.JFrame {
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         signIn(txtUsername.getText(), txtPassword.getText());
     }//GEN-LAST:event_txtUsernameActionPerformed
+
+    private void jLabel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseEntered
+        txtPassword.setEchoChar('\u0000');
+    }//GEN-LAST:event_jLabel7MouseEntered
+
+    private void jLabel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseExited
+        txtPassword.setEchoChar('\u2022');
+    }//GEN-LAST:event_jLabel7MouseExited
 
     /**
      * @param args the command line arguments
