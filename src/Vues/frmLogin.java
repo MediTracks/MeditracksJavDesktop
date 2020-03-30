@@ -5,7 +5,7 @@
  */
 package Vues;
 
-import brain.controller.DbConnect;
+import Controller.DbConnect;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
@@ -39,10 +39,10 @@ public class frmLogin extends javax.swing.JFrame {
                     //recuperation de l'accreditation du user connecté
                     accred = rs.getString("uAccredition");
                     //passation to FrmMain
-                    frmMain.user_receiver = username;
-                    frmMain.accred_receiver = accred;
+                    MenuFRM.user_receiver = username;
+                    MenuFRM.accred_receiver = accred;
                     
-                    new frmMain().setVisible(true);
+                    new MenuFRM().setVisible(true);
                     this.setVisible(false);
                 }
                                  

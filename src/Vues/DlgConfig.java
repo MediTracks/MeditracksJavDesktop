@@ -5,8 +5,8 @@
  */
 package Vues;
 
-import brain.controller.ConfigurationServeur;
-import brain.controller.DbConnect;
+import Controller.ConfigurationServeur;
+import Controller.DbConnect;
 import javax.swing.JOptionPane;
 
 /**

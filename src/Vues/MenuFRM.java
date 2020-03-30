@@ -11,6 +11,8 @@ package Vues;
  */
 public class MenuFRM extends javax.swing.JFrame {
 
+    public static String user_receiver;
+    public static String accred_receiver;
     /**
      * Creates new form MenuFRM
      */
