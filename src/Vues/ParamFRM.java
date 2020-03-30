@@ -5,12 +5,16 @@
  */
 package Vues;
 
+import javax.swing.JOptionPane;
+import model.ClsProvince;
+
 /**
  *
  * @author CRYONI-RIEK
  */
 public class ParamFRM extends javax.swing.JPanel {
 
+    ClsProvince prov = new ClsProvince();
     /**
      * Creates new form ParamFRM
      */
@@ -30,8 +34,8 @@ public class ParamFRM extends javax.swing.JPanel {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        txtID_Statut = new org.jdesktop.swingx.JXTextField();
-        txtDesignation_Statut = new org.jdesktop.swingx.JXTextField();
+        txtID_Province = new org.jdesktop.swingx.JXTextField();
+        txtDesignation_Province = new org.jdesktop.swingx.JXTextField();
         jToolBar6 = new javax.swing.JToolBar();
         jToolBar4 = new javax.swing.JToolBar();
         jButton3 = new javax.swing.JButton();
@@ -228,14 +232,14 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.setOpaque(false);
 
-        txtID_Statut.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtID_Statut.setPrompt("ID");
-        txtID_Statut.setPromptFontStyle(new java.lang.Integer(0));
+        txtID_Province.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtID_Province.setPrompt("ID");
+        txtID_Province.setPromptFontStyle(new java.lang.Integer(0));
 
-        txtDesignation_Statut.setToolTipText("designation");
-        txtDesignation_Statut.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtDesignation_Statut.setPrompt("designation");
-        txtDesignation_Statut.setPromptFontStyle(new java.lang.Integer(0));
+        txtDesignation_Province.setToolTipText("designation");
+        txtDesignation_Province.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtDesignation_Province.setPrompt("designation");
+        txtDesignation_Province.setPromptFontStyle(new java.lang.Integer(0));
 
         jToolBar6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar6.setRollover(true);
@@ -249,6 +253,11 @@ public class ParamFRM extends javax.swing.JPanel {
         jButton3.setText("Enregistrer");
         jButton3.setFocusable(false);
         jButton3.setOpaque(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jToolBar4.add(jButton3);
 
         jToolBar6.add(jToolBar4);
@@ -309,8 +318,8 @@ public class ParamFRM extends javax.swing.JPanel {
                 .addGap(194, 194, 194)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToolBar6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtID_Statut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtDesignation_Statut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtID_Province, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtDesignation_Province, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(246, 246, 246))
             .addComponent(Titre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -319,9 +328,9 @@ public class ParamFRM extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(Titre, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtID_Statut, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtID_Province, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtDesignation_Statut, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDesignation_Province, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jToolBar6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -1775,6 +1784,20 @@ public class ParamFRM extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            prov.setId_province(txtID_Province.getText());
+            prov.setDescription_province(txtDesignation_Province.getText());
+            if (prov.Enregsitrer()) {
+                JOptionPane.showMessageDialog(null,"Succès", "Province Message", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } 
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Erreur "+ e.getMessage(), "Province Entry Error", JOptionPane.WARNING_MESSAGE);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Titre;
@@ -1954,10 +1977,10 @@ public class ParamFRM extends javax.swing.JPanel {
     private org.jdesktop.swingx.JXTable tStatut;
     private org.jdesktop.swingx.JXTable tType;
     private org.jdesktop.swingx.JXTable tZone;
-    private org.jdesktop.swingx.JXTextField txtDesignation_Statut;
+    private org.jdesktop.swingx.JXTextField txtDesignation_Province;
     private org.jdesktop.swingx.JXTextField txtDesignation_Type;
     private org.jdesktop.swingx.JXTextField txtDesignation_Zone;
-    private org.jdesktop.swingx.JXTextField txtID_Statut;
+    private org.jdesktop.swingx.JXTextField txtID_Province;
     private org.jdesktop.swingx.JXTextField txtID_Type;
     private org.jdesktop.swingx.JXTextField txtID_Zone;
     private org.jdesktop.swingx.JXSearchField txtRecherche_Statut;
