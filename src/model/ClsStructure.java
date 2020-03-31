@@ -68,7 +68,7 @@ public class ClsStructure  implements IActionManager{
     
     @Override
     public boolean Enregsitrer() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return Controller.ClsUpdate_Model.EnregistrerData(this); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
