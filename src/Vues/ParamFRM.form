@@ -445,8 +445,8 @@
                           <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jToolBar9" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtID_Type" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtDesignation_Type" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtID_Depot" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtDesignation_Depot" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
                       </Group>
@@ -458,9 +458,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="Titre1" min="-2" pref="58" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtID_Type" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtID_Depot" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtDesignation_Type" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtDesignation_Depot" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jToolBar9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -471,20 +471,20 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="org.jdesktop.swingx.JXTextField" name="txtID_Type">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtID_Depot">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                      <Font name="Segoe UI" size="15" style="0"/>
                     </Property>
                     <Property name="prompt" type="java.lang.String" value="ID"/>
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="txtDesignation_Type">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtDesignation_Depot">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="designation"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                      <Font name="Segoe UI" size="15" style="0"/>
                     </Property>
                     <Property name="prompt" type="java.lang.String" value="designation"/>
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
@@ -523,6 +523,9 @@
                             <Property name="focusable" type="boolean" value="false"/>
                             <Property name="opaque" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -750,8 +753,8 @@
                           <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jToolBar13" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtID_Zone" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtDesignation_Zone" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtID_Categorie" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtDesignation_Categorie" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
                       </Group>
@@ -763,9 +766,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="Titre2" min="-2" pref="58" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtID_Zone" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtID_Categorie" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtDesignation_Zone" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtDesignation_Categorie" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jToolBar13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -776,7 +779,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="org.jdesktop.swingx.JXTextField" name="txtID_Zone">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtID_Categorie">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -785,7 +788,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="txtDesignation_Zone">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtDesignation_Categorie">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="designation"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -828,6 +831,9 @@
                             <Property name="focusable" type="boolean" value="false"/>
                             <Property name="opaque" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1054,9 +1060,9 @@
                           <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jToolBar25" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField11" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField12" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jComboBox2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtID_Ville" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtDesignation_Ville" alignment="0" max="32767" attributes="0"/>
+                              <Component id="cmbProvince" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
                       </Group>
@@ -1068,11 +1074,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="Titre5" min="-2" pref="58" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField11" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtID_Ville" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField12" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtDesignation_Ville" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jComboBox2" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Component id="cmbProvince" min="-2" pref="46" max="-2" attributes="0"/>
                           <EmptySpace pref="8" max="32767" attributes="0"/>
                           <Component id="jToolBar25" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1083,7 +1089,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField11">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtID_Ville">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -1092,7 +1098,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField12">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtDesignation_Ville">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="designation"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1135,6 +1141,9 @@
                             <Property name="focusable" type="boolean" value="false"/>
                             <Property name="opaque" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton18ActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1222,7 +1231,7 @@
                     <Property name="text" type="java.lang.String" value="Ville"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox2">
+                <Component class="javax.swing.JComboBox" name="cmbProvince">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -1384,7 +1393,7 @@
                               <Component id="jToolBar29" alignment="0" max="32767" attributes="0"/>
                               <Component id="jXTextField13" alignment="0" max="32767" attributes="0"/>
                               <Component id="jXTextField14" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jComboBox3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="cmbCategorie" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
                       </Group>
@@ -1400,7 +1409,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jXTextField14" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jComboBox3" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Component id="cmbCategorie" min="-2" pref="46" max="-2" attributes="0"/>
                           <EmptySpace pref="8" max="32767" attributes="0"/>
                           <Component id="jToolBar29" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1463,6 +1472,9 @@
                             <Property name="focusable" type="boolean" value="false"/>
                             <Property name="opaque" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton21ActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1550,7 +1562,7 @@
                     <Property name="text" type="java.lang.String" value="Produit"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox3">
+                <Component class="javax.swing.JComboBox" name="cmbCategorie">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -1561,7 +1573,7 @@
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                         <TitledBorder title="Categorie">
-                          <Font PropertyName="font" name="Segoe UI" size="14" style="0"/>
+                          <Font PropertyName="font" name="Segoe UI" size="12" style="0"/>
                         </TitledBorder>
                       </Border>
                     </Property>
@@ -1710,11 +1722,11 @@
                           <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jToolBar33" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField15" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField16" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jComboBox4" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField19" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField20" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtId_Zone" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtDesination_Zone" alignment="0" max="32767" attributes="0"/>
+                              <Component id="cmbVille" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtTel_Zone" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtAdresse_zone" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
                       </Group>
@@ -1726,15 +1738,15 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="Titre7" min="-2" pref="58" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField15" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtId_Zone" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField16" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtDesination_Zone" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField19" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtTel_Zone" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField20" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtAdresse_zone" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jComboBox4" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Component id="cmbVille" min="-2" pref="46" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jToolBar33" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1745,7 +1757,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField15">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtId_Zone">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -1754,7 +1766,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField16">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtDesination_Zone">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -1796,6 +1808,9 @@
                             <Property name="focusable" type="boolean" value="false"/>
                             <Property name="opaque" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton24ActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1883,7 +1898,7 @@
                     <Property name="text" type="java.lang.String" value="Zone"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox4">
+                <Component class="javax.swing.JComboBox" name="cmbVille">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -1904,7 +1919,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField19">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtTel_Zone">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="Tel"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1914,7 +1929,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField20">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtAdresse_zone">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -2065,11 +2080,11 @@
                           <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jToolBar41" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField21" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField22" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jComboBox6" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField23" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField24" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtId_structure" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtDesignation_structure" alignment="0" max="32767" attributes="0"/>
+                              <Component id="cmbzone" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtTel_structure" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtAdresse_structure" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
                       </Group>
@@ -2081,15 +2096,15 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="Titre9" min="-2" pref="58" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField21" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtId_structure" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField22" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtDesignation_structure" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField23" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtTel_structure" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField24" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtAdresse_structure" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jComboBox6" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Component id="cmbzone" min="-2" pref="46" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jToolBar41" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -2100,7 +2115,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField21">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtId_structure">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -2109,7 +2124,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField22">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtDesignation_structure">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -2151,6 +2166,9 @@
                             <Property name="focusable" type="boolean" value="false"/>
                             <Property name="opaque" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton30ActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -2238,7 +2256,7 @@
                     <Property name="text" type="java.lang.String" value="Structure"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox6">
+                <Component class="javax.swing.JComboBox" name="cmbzone">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -2259,7 +2277,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField23">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtTel_structure">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="Tel"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -2269,7 +2287,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField24">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtAdresse_structure">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -2420,11 +2438,11 @@
                           <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jToolBar45" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField25" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField26" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField27" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField28" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField29" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtId_fourn" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtNom_fourn" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtTel_fourn" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtAdresse_fourn" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtMail_fourn" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
                       </Group>
@@ -2436,15 +2454,15 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="Titre10" min="-2" pref="58" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField25" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtId_fourn" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField26" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtNom_fourn" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField27" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtTel_fourn" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField28" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtAdresse_fourn" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField29" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtMail_fourn" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jToolBar45" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -2455,7 +2473,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField25">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtId_fourn">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -2464,7 +2482,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField26">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtNom_fourn">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -2506,6 +2524,9 @@
                             <Property name="focusable" type="boolean" value="false"/>
                             <Property name="opaque" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton33ActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -2593,7 +2614,7 @@
                     <Property name="text" type="java.lang.String" value="Fournisseur"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField27">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtTel_fourn">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="Tel"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -2603,7 +2624,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField28">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtAdresse_fourn">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -2612,7 +2633,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField29">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtMail_fourn">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -2760,11 +2781,11 @@
                           <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jToolBar49" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField30" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField31" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField32" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField33" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField34" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtId_trans" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtNom_trans" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtTel_trans" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtAdresse_trans" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtMail_trans" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
                       </Group>
@@ -2776,15 +2797,15 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="Titre11" min="-2" pref="58" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField30" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtId_trans" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField31" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtNom_trans" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField32" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtTel_trans" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField33" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtAdresse_trans" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField34" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtMail_trans" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jToolBar49" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -2795,7 +2816,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField30">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtId_trans">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -2804,7 +2825,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField31">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtNom_trans">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -2846,6 +2867,9 @@
                             <Property name="focusable" type="boolean" value="false"/>
                             <Property name="opaque" type="boolean" value="false"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton36ActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -2933,7 +2957,7 @@
                     <Property name="text" type="java.lang.String" value="Transporteur"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField32">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtTel_trans">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="Tel"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -2943,7 +2967,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField33">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtAdresse_trans">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -2952,7 +2976,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField34">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txtMail_trans">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>

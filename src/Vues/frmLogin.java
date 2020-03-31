@@ -307,10 +307,6 @@ public class frmLogin extends javax.swing.JFrame {
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         //code here to testLogin Data
         signIn(txtUsername.getText(), txtPassword.getText());
-
-
-//        new MenuFRM().setVisible(true);
-//        this.setVisible(false);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked

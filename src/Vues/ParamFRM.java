@@ -5,8 +5,9 @@
  */
 package Vues;
 
+import Controller.ClsHelper;
 import javax.swing.JOptionPane;
-import model.ClsProvince;
+import model.*;
 
 /**
  *
@@ -15,11 +16,28 @@ import model.ClsProvince;
 public class ParamFRM extends javax.swing.JPanel {
 
     ClsProvince prov = new ClsProvince();
+    ClsDepot dep = new ClsDepot();
+    ClsProduit prod = new ClsProduit();
+    ClsCategorie_Prod cat = new ClsCategorie_Prod();
+    ClsVille ville = new ClsVille();
+    ClsZone zone = new ClsZone();
+    ClsStructure structure = new ClsStructure();
+    ClsTransporteur transporteur = new ClsTransporteur();
+    ClsFournisseur fourn = new ClsFournisseur();
+
     /**
      * Creates new form ParamFRM
      */
     public ParamFRM() {
         initComponents();
+        try {
+            ClsHelper.Load_CmbBox(cmbCategorie, "SELECT designation_categorie FROM t_categorie_prod");
+            ClsHelper.Load_CmbBox(cmbProvince, "SELECT description_province FROM t_province");
+            ClsHelper.Load_CmbBox(cmbVille, "SELECT description_ville FROM t_ville");
+            ClsHelper.Load_CmbBox(cmbzone, "SELECT descr_zone FROM t_zone");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur " + e.getMessage(), "Catégorie Entry Error", JOptionPane.WARNING_MESSAGE);
+        }
     }
 
     /**
@@ -53,8 +71,8 @@ public class ParamFRM extends javax.swing.JPanel {
         tStatut = new org.jdesktop.swingx.JXTable();
         jPanel9 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        txtID_Type = new org.jdesktop.swingx.JXTextField();
-        txtDesignation_Type = new org.jdesktop.swingx.JXTextField();
+        txtID_Depot = new org.jdesktop.swingx.JXTextField();
+        txtDesignation_Depot = new org.jdesktop.swingx.JXTextField();
         jToolBar9 = new javax.swing.JToolBar();
         jToolBar10 = new javax.swing.JToolBar();
         jButton5 = new javax.swing.JButton();
@@ -72,8 +90,8 @@ public class ParamFRM extends javax.swing.JPanel {
         tType = new org.jdesktop.swingx.JXTable();
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
-        txtID_Zone = new org.jdesktop.swingx.JXTextField();
-        txtDesignation_Zone = new org.jdesktop.swingx.JXTextField();
+        txtID_Categorie = new org.jdesktop.swingx.JXTextField();
+        txtDesignation_Categorie = new org.jdesktop.swingx.JXTextField();
         jToolBar13 = new javax.swing.JToolBar();
         jToolBar14 = new javax.swing.JToolBar();
         jButton9 = new javax.swing.JButton();
@@ -91,8 +109,8 @@ public class ParamFRM extends javax.swing.JPanel {
         tZone = new org.jdesktop.swingx.JXTable();
         jPanel24 = new javax.swing.JPanel();
         jPanel25 = new javax.swing.JPanel();
-        jXTextField11 = new org.jdesktop.swingx.JXTextField();
-        jXTextField12 = new org.jdesktop.swingx.JXTextField();
+        txtID_Ville = new org.jdesktop.swingx.JXTextField();
+        txtDesignation_Ville = new org.jdesktop.swingx.JXTextField();
         jToolBar25 = new javax.swing.JToolBar();
         jToolBar26 = new javax.swing.JToolBar();
         jButton18 = new javax.swing.JButton();
@@ -103,7 +121,7 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel26 = new javax.swing.JPanel();
         jXSearchField6 = new org.jdesktop.swingx.JXSearchField();
         Titre5 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cmbProvince = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jPanel27 = new javax.swing.JPanel();
@@ -123,7 +141,7 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel30 = new javax.swing.JPanel();
         jXSearchField7 = new org.jdesktop.swingx.JXSearchField();
         Titre6 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cmbCategorie = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jPanel31 = new javax.swing.JPanel();
@@ -131,8 +149,8 @@ public class ParamFRM extends javax.swing.JPanel {
         jXTable10 = new org.jdesktop.swingx.JXTable();
         jPanel32 = new javax.swing.JPanel();
         jPanel33 = new javax.swing.JPanel();
-        jXTextField15 = new org.jdesktop.swingx.JXTextField();
-        jXTextField16 = new org.jdesktop.swingx.JXTextField();
+        txtId_Zone = new org.jdesktop.swingx.JXTextField();
+        txtDesination_Zone = new org.jdesktop.swingx.JXTextField();
         jToolBar33 = new javax.swing.JToolBar();
         jToolBar34 = new javax.swing.JToolBar();
         jButton24 = new javax.swing.JButton();
@@ -143,9 +161,9 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel34 = new javax.swing.JPanel();
         jXSearchField8 = new org.jdesktop.swingx.JXSearchField();
         Titre7 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jXTextField19 = new org.jdesktop.swingx.JXTextField();
-        jXTextField20 = new org.jdesktop.swingx.JXTextField();
+        cmbVille = new javax.swing.JComboBox<>();
+        txtTel_Zone = new org.jdesktop.swingx.JXTextField();
+        txtAdresse_zone = new org.jdesktop.swingx.JXTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jPanel35 = new javax.swing.JPanel();
@@ -153,8 +171,8 @@ public class ParamFRM extends javax.swing.JPanel {
         jXTable11 = new org.jdesktop.swingx.JXTable();
         jPanel40 = new javax.swing.JPanel();
         jPanel41 = new javax.swing.JPanel();
-        jXTextField21 = new org.jdesktop.swingx.JXTextField();
-        jXTextField22 = new org.jdesktop.swingx.JXTextField();
+        txtId_structure = new org.jdesktop.swingx.JXTextField();
+        txtDesignation_structure = new org.jdesktop.swingx.JXTextField();
         jToolBar41 = new javax.swing.JToolBar();
         jToolBar42 = new javax.swing.JToolBar();
         jButton30 = new javax.swing.JButton();
@@ -165,9 +183,9 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel42 = new javax.swing.JPanel();
         jXSearchField10 = new org.jdesktop.swingx.JXSearchField();
         Titre9 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jXTextField23 = new org.jdesktop.swingx.JXTextField();
-        jXTextField24 = new org.jdesktop.swingx.JXTextField();
+        cmbzone = new javax.swing.JComboBox<>();
+        txtTel_structure = new org.jdesktop.swingx.JXTextField();
+        txtAdresse_structure = new org.jdesktop.swingx.JXTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jPanel43 = new javax.swing.JPanel();
@@ -175,8 +193,8 @@ public class ParamFRM extends javax.swing.JPanel {
         jXTable13 = new org.jdesktop.swingx.JXTable();
         jPanel44 = new javax.swing.JPanel();
         jPanel45 = new javax.swing.JPanel();
-        jXTextField25 = new org.jdesktop.swingx.JXTextField();
-        jXTextField26 = new org.jdesktop.swingx.JXTextField();
+        txtId_fourn = new org.jdesktop.swingx.JXTextField();
+        txtNom_fourn = new org.jdesktop.swingx.JXTextField();
         jToolBar45 = new javax.swing.JToolBar();
         jToolBar46 = new javax.swing.JToolBar();
         jButton33 = new javax.swing.JButton();
@@ -187,9 +205,9 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel46 = new javax.swing.JPanel();
         jXSearchField11 = new org.jdesktop.swingx.JXSearchField();
         Titre10 = new javax.swing.JLabel();
-        jXTextField27 = new org.jdesktop.swingx.JXTextField();
-        jXTextField28 = new org.jdesktop.swingx.JXTextField();
-        jXTextField29 = new org.jdesktop.swingx.JXTextField();
+        txtTel_fourn = new org.jdesktop.swingx.JXTextField();
+        txtAdresse_fourn = new org.jdesktop.swingx.JXTextField();
+        txtMail_fourn = new org.jdesktop.swingx.JXTextField();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jPanel47 = new javax.swing.JPanel();
@@ -197,8 +215,8 @@ public class ParamFRM extends javax.swing.JPanel {
         jXTable14 = new org.jdesktop.swingx.JXTable();
         jPanel48 = new javax.swing.JPanel();
         jPanel49 = new javax.swing.JPanel();
-        jXTextField30 = new org.jdesktop.swingx.JXTextField();
-        jXTextField31 = new org.jdesktop.swingx.JXTextField();
+        txtId_trans = new org.jdesktop.swingx.JXTextField();
+        txtNom_trans = new org.jdesktop.swingx.JXTextField();
         jToolBar49 = new javax.swing.JToolBar();
         jToolBar50 = new javax.swing.JToolBar();
         jButton36 = new javax.swing.JButton();
@@ -209,9 +227,9 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel50 = new javax.swing.JPanel();
         jXSearchField12 = new org.jdesktop.swingx.JXSearchField();
         Titre11 = new javax.swing.JLabel();
-        jXTextField32 = new org.jdesktop.swingx.JXTextField();
-        jXTextField33 = new org.jdesktop.swingx.JXTextField();
-        jXTextField34 = new org.jdesktop.swingx.JXTextField();
+        txtTel_trans = new org.jdesktop.swingx.JXTextField();
+        txtAdresse_trans = new org.jdesktop.swingx.JXTextField();
+        txtMail_trans = new org.jdesktop.swingx.JXTextField();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jPanel51 = new javax.swing.JPanel();
@@ -397,14 +415,14 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setOpaque(false);
 
-        txtID_Type.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtID_Type.setPrompt("ID");
-        txtID_Type.setPromptFontStyle(new java.lang.Integer(0));
+        txtID_Depot.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtID_Depot.setPrompt("ID");
+        txtID_Depot.setPromptFontStyle(new java.lang.Integer(0));
 
-        txtDesignation_Type.setToolTipText("designation");
-        txtDesignation_Type.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtDesignation_Type.setPrompt("designation");
-        txtDesignation_Type.setPromptFontStyle(new java.lang.Integer(0));
+        txtDesignation_Depot.setToolTipText("designation");
+        txtDesignation_Depot.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtDesignation_Depot.setPrompt("designation");
+        txtDesignation_Depot.setPromptFontStyle(new java.lang.Integer(0));
 
         jToolBar9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar9.setRollover(true);
@@ -418,6 +436,11 @@ public class ParamFRM extends javax.swing.JPanel {
         jButton5.setText("Enregistrer");
         jButton5.setFocusable(false);
         jButton5.setOpaque(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jToolBar10.add(jButton5);
 
         jToolBar9.add(jToolBar10);
@@ -479,8 +502,8 @@ public class ParamFRM extends javax.swing.JPanel {
                 .addGap(194, 194, 194)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToolBar9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtID_Type, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtDesignation_Type, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtID_Depot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtDesignation_Depot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(246, 246, 246))
             .addComponent(Titre1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -489,9 +512,9 @@ public class ParamFRM extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(Titre1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtID_Type, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtID_Depot, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtDesignation_Type, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDesignation_Depot, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jToolBar9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -558,14 +581,14 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel13.setOpaque(false);
 
-        txtID_Zone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtID_Zone.setPrompt("ID");
-        txtID_Zone.setPromptFontStyle(new java.lang.Integer(0));
+        txtID_Categorie.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtID_Categorie.setPrompt("ID");
+        txtID_Categorie.setPromptFontStyle(new java.lang.Integer(0));
 
-        txtDesignation_Zone.setToolTipText("designation");
-        txtDesignation_Zone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtDesignation_Zone.setPrompt("designation");
-        txtDesignation_Zone.setPromptFontStyle(new java.lang.Integer(0));
+        txtDesignation_Categorie.setToolTipText("designation");
+        txtDesignation_Categorie.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtDesignation_Categorie.setPrompt("designation");
+        txtDesignation_Categorie.setPromptFontStyle(new java.lang.Integer(0));
 
         jToolBar13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar13.setRollover(true);
@@ -579,6 +602,11 @@ public class ParamFRM extends javax.swing.JPanel {
         jButton9.setText("Enregistrer");
         jButton9.setFocusable(false);
         jButton9.setOpaque(false);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         jToolBar14.add(jButton9);
 
         jToolBar13.add(jToolBar14);
@@ -639,8 +667,8 @@ public class ParamFRM extends javax.swing.JPanel {
                 .addGap(194, 194, 194)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToolBar13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtID_Zone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtDesignation_Zone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtID_Categorie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtDesignation_Categorie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(246, 246, 246))
             .addComponent(Titre2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -649,9 +677,9 @@ public class ParamFRM extends javax.swing.JPanel {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addComponent(Titre2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtID_Zone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtID_Categorie, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtDesignation_Zone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDesignation_Categorie, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jToolBar13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -718,14 +746,14 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel25.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel25.setOpaque(false);
 
-        jXTextField11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField11.setPrompt("ID");
-        jXTextField11.setPromptFontStyle(new java.lang.Integer(0));
+        txtID_Ville.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtID_Ville.setPrompt("ID");
+        txtID_Ville.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField12.setToolTipText("designation");
-        jXTextField12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField12.setPrompt("designation");
-        jXTextField12.setPromptFontStyle(new java.lang.Integer(0));
+        txtDesignation_Ville.setToolTipText("designation");
+        txtDesignation_Ville.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtDesignation_Ville.setPrompt("designation");
+        txtDesignation_Ville.setPromptFontStyle(new java.lang.Integer(0));
 
         jToolBar25.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar25.setRollover(true);
@@ -739,6 +767,11 @@ public class ParamFRM extends javax.swing.JPanel {
         jButton18.setText("Enregistrer");
         jButton18.setFocusable(false);
         jButton18.setOpaque(false);
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
         jToolBar26.add(jButton18);
 
         jToolBar25.add(jToolBar26);
@@ -787,9 +820,9 @@ public class ParamFRM extends javax.swing.JPanel {
         Titre5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Titre5.setText("Ville");
 
-        jComboBox2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jComboBox2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Province", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-        jComboBox2.setOpaque(false);
+        cmbProvince.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbProvince.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Province", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        cmbProvince.setOpaque(false);
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
@@ -803,9 +836,9 @@ public class ParamFRM extends javax.swing.JPanel {
                 .addGap(194, 194, 194)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToolBar25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtID_Ville, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtDesignation_Ville, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cmbProvince, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(246, 246, 246))
             .addComponent(Titre5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -814,11 +847,11 @@ public class ParamFRM extends javax.swing.JPanel {
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addComponent(Titre5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtID_Ville, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDesignation_Ville, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmbProvince, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(jToolBar25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -906,6 +939,11 @@ public class ParamFRM extends javax.swing.JPanel {
         jButton21.setText("Enregistrer");
         jButton21.setFocusable(false);
         jButton21.setOpaque(false);
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
         jToolBar30.add(jButton21);
 
         jToolBar29.add(jToolBar30);
@@ -954,9 +992,9 @@ public class ParamFRM extends javax.swing.JPanel {
         Titre6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Titre6.setText("Produit");
 
-        jComboBox3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jComboBox3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Categorie", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-        jComboBox3.setOpaque(false);
+        cmbCategorie.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbCategorie.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Categorie", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12))); // NOI18N
+        cmbCategorie.setOpaque(false);
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -972,7 +1010,7 @@ public class ParamFRM extends javax.swing.JPanel {
                     .addComponent(jToolBar29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jXTextField13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jXTextField14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(cmbCategorie, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(246, 246, 246))
             .addComponent(Titre6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -985,7 +1023,7 @@ public class ParamFRM extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jXTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmbCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(jToolBar29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1052,13 +1090,13 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel33.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel33.setOpaque(false);
 
-        jXTextField15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField15.setPrompt("ID");
-        jXTextField15.setPromptFontStyle(new java.lang.Integer(0));
+        txtId_Zone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtId_Zone.setPrompt("ID");
+        txtId_Zone.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField16.setPrompt("Designation");
-        jXTextField16.setPromptFontStyle(new java.lang.Integer(0));
+        txtDesination_Zone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtDesination_Zone.setPrompt("Designation");
+        txtDesination_Zone.setPromptFontStyle(new java.lang.Integer(0));
 
         jToolBar33.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar33.setRollover(true);
@@ -1072,6 +1110,11 @@ public class ParamFRM extends javax.swing.JPanel {
         jButton24.setText("Enregistrer");
         jButton24.setFocusable(false);
         jButton24.setOpaque(false);
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
         jToolBar34.add(jButton24);
 
         jToolBar33.add(jToolBar34);
@@ -1120,18 +1163,18 @@ public class ParamFRM extends javax.swing.JPanel {
         Titre7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Titre7.setText("Zone");
 
-        jComboBox4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jComboBox4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ville", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-        jComboBox4.setOpaque(false);
+        cmbVille.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbVille.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ville", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        cmbVille.setOpaque(false);
 
-        jXTextField19.setToolTipText("Tel");
-        jXTextField19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField19.setPrompt("Tel");
-        jXTextField19.setPromptFontStyle(new java.lang.Integer(0));
+        txtTel_Zone.setToolTipText("Tel");
+        txtTel_Zone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtTel_Zone.setPrompt("Tel");
+        txtTel_Zone.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField20.setPrompt("Addresse");
-        jXTextField20.setPromptFontStyle(new java.lang.Integer(0));
+        txtAdresse_zone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtAdresse_zone.setPrompt("Addresse");
+        txtAdresse_zone.setPromptFontStyle(new java.lang.Integer(0));
 
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
@@ -1145,11 +1188,11 @@ public class ParamFRM extends javax.swing.JPanel {
                 .addGap(194, 194, 194)
                 .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToolBar33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtId_Zone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtDesination_Zone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cmbVille, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtTel_Zone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtAdresse_zone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(246, 246, 246))
             .addComponent(Titre7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -1158,15 +1201,15 @@ public class ParamFRM extends javax.swing.JPanel {
             .addGroup(jPanel33Layout.createSequentialGroup()
                 .addComponent(Titre7, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtId_Zone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDesination_Zone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTel_Zone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAdresse_zone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmbVille, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jToolBar33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1235,13 +1278,13 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel41.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel41.setOpaque(false);
 
-        jXTextField21.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField21.setPrompt("ID");
-        jXTextField21.setPromptFontStyle(new java.lang.Integer(0));
+        txtId_structure.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtId_structure.setPrompt("ID");
+        txtId_structure.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField22.setPrompt("Designation");
-        jXTextField22.setPromptFontStyle(new java.lang.Integer(0));
+        txtDesignation_structure.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtDesignation_structure.setPrompt("Designation");
+        txtDesignation_structure.setPromptFontStyle(new java.lang.Integer(0));
 
         jToolBar41.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar41.setRollover(true);
@@ -1255,6 +1298,11 @@ public class ParamFRM extends javax.swing.JPanel {
         jButton30.setText("Enregistrer");
         jButton30.setFocusable(false);
         jButton30.setOpaque(false);
+        jButton30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton30ActionPerformed(evt);
+            }
+        });
         jToolBar42.add(jButton30);
 
         jToolBar41.add(jToolBar42);
@@ -1303,18 +1351,18 @@ public class ParamFRM extends javax.swing.JPanel {
         Titre9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Titre9.setText("Structure");
 
-        jComboBox6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jComboBox6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-        jComboBox6.setOpaque(false);
+        cmbzone.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbzone.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Zone", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        cmbzone.setOpaque(false);
 
-        jXTextField23.setToolTipText("Tel");
-        jXTextField23.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField23.setPrompt("Tel");
-        jXTextField23.setPromptFontStyle(new java.lang.Integer(0));
+        txtTel_structure.setToolTipText("Tel");
+        txtTel_structure.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtTel_structure.setPrompt("Tel");
+        txtTel_structure.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField24.setPrompt("Addresse");
-        jXTextField24.setPromptFontStyle(new java.lang.Integer(0));
+        txtAdresse_structure.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtAdresse_structure.setPrompt("Addresse");
+        txtAdresse_structure.setPromptFontStyle(new java.lang.Integer(0));
 
         javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
         jPanel41.setLayout(jPanel41Layout);
@@ -1328,11 +1376,11 @@ public class ParamFRM extends javax.swing.JPanel {
                 .addGap(194, 194, 194)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToolBar41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtId_structure, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtDesignation_structure, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cmbzone, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtTel_structure, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtAdresse_structure, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(246, 246, 246))
             .addComponent(Titre9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -1341,15 +1389,15 @@ public class ParamFRM extends javax.swing.JPanel {
             .addGroup(jPanel41Layout.createSequentialGroup()
                 .addComponent(Titre9, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtId_structure, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDesignation_structure, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTel_structure, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAdresse_structure, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmbzone, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jToolBar41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1418,13 +1466,13 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel45.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel45.setOpaque(false);
 
-        jXTextField25.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField25.setPrompt("ID");
-        jXTextField25.setPromptFontStyle(new java.lang.Integer(0));
+        txtId_fourn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtId_fourn.setPrompt("ID");
+        txtId_fourn.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField26.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField26.setPrompt("Nom");
-        jXTextField26.setPromptFontStyle(new java.lang.Integer(0));
+        txtNom_fourn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtNom_fourn.setPrompt("Nom");
+        txtNom_fourn.setPromptFontStyle(new java.lang.Integer(0));
 
         jToolBar45.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar45.setRollover(true);
@@ -1438,6 +1486,11 @@ public class ParamFRM extends javax.swing.JPanel {
         jButton33.setText("Enregistrer");
         jButton33.setFocusable(false);
         jButton33.setOpaque(false);
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton33ActionPerformed(evt);
+            }
+        });
         jToolBar46.add(jButton33);
 
         jToolBar45.add(jToolBar46);
@@ -1486,18 +1539,18 @@ public class ParamFRM extends javax.swing.JPanel {
         Titre10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Titre10.setText("Fournisseur");
 
-        jXTextField27.setToolTipText("Tel");
-        jXTextField27.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField27.setPrompt("Tel");
-        jXTextField27.setPromptFontStyle(new java.lang.Integer(0));
+        txtTel_fourn.setToolTipText("Tel");
+        txtTel_fourn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtTel_fourn.setPrompt("Tel");
+        txtTel_fourn.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField28.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField28.setPrompt("Addresse");
-        jXTextField28.setPromptFontStyle(new java.lang.Integer(0));
+        txtAdresse_fourn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtAdresse_fourn.setPrompt("Addresse");
+        txtAdresse_fourn.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField29.setPrompt("Mail");
-        jXTextField29.setPromptFontStyle(new java.lang.Integer(0));
+        txtMail_fourn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtMail_fourn.setPrompt("Mail");
+        txtMail_fourn.setPromptFontStyle(new java.lang.Integer(0));
 
         javax.swing.GroupLayout jPanel45Layout = new javax.swing.GroupLayout(jPanel45);
         jPanel45.setLayout(jPanel45Layout);
@@ -1511,11 +1564,11 @@ public class ParamFRM extends javax.swing.JPanel {
                 .addGap(194, 194, 194)
                 .addGroup(jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToolBar45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtId_fourn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtNom_fourn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtTel_fourn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtAdresse_fourn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtMail_fourn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(246, 246, 246))
             .addComponent(Titre10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -1524,15 +1577,15 @@ public class ParamFRM extends javax.swing.JPanel {
             .addGroup(jPanel45Layout.createSequentialGroup()
                 .addComponent(Titre10, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtId_fourn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNom_fourn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTel_fourn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAdresse_fourn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtMail_fourn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jToolBar45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1599,13 +1652,13 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel49.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel49.setOpaque(false);
 
-        jXTextField30.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField30.setPrompt("ID");
-        jXTextField30.setPromptFontStyle(new java.lang.Integer(0));
+        txtId_trans.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtId_trans.setPrompt("ID");
+        txtId_trans.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField31.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField31.setPrompt("Nom");
-        jXTextField31.setPromptFontStyle(new java.lang.Integer(0));
+        txtNom_trans.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtNom_trans.setPrompt("Nom");
+        txtNom_trans.setPromptFontStyle(new java.lang.Integer(0));
 
         jToolBar49.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar49.setRollover(true);
@@ -1619,6 +1672,11 @@ public class ParamFRM extends javax.swing.JPanel {
         jButton36.setText("Enregistrer");
         jButton36.setFocusable(false);
         jButton36.setOpaque(false);
+        jButton36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton36ActionPerformed(evt);
+            }
+        });
         jToolBar50.add(jButton36);
 
         jToolBar49.add(jToolBar50);
@@ -1667,18 +1725,18 @@ public class ParamFRM extends javax.swing.JPanel {
         Titre11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Titre11.setText("Transporteur");
 
-        jXTextField32.setToolTipText("Tel");
-        jXTextField32.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField32.setPrompt("Tel");
-        jXTextField32.setPromptFontStyle(new java.lang.Integer(0));
+        txtTel_trans.setToolTipText("Tel");
+        txtTel_trans.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtTel_trans.setPrompt("Tel");
+        txtTel_trans.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField33.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField33.setPrompt("Addresse");
-        jXTextField33.setPromptFontStyle(new java.lang.Integer(0));
+        txtAdresse_trans.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtAdresse_trans.setPrompt("Addresse");
+        txtAdresse_trans.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField34.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField34.setPrompt("Mail");
-        jXTextField34.setPromptFontStyle(new java.lang.Integer(0));
+        txtMail_trans.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtMail_trans.setPrompt("Mail");
+        txtMail_trans.setPromptFontStyle(new java.lang.Integer(0));
 
         javax.swing.GroupLayout jPanel49Layout = new javax.swing.GroupLayout(jPanel49);
         jPanel49.setLayout(jPanel49Layout);
@@ -1692,11 +1750,11 @@ public class ParamFRM extends javax.swing.JPanel {
                 .addGap(194, 194, 194)
                 .addGroup(jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToolBar49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtId_trans, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtNom_trans, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtTel_trans, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtAdresse_trans, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtMail_trans, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(246, 246, 246))
             .addComponent(Titre11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -1705,15 +1763,15 @@ public class ParamFRM extends javax.swing.JPanel {
             .addGroup(jPanel49Layout.createSequentialGroup()
                 .addComponent(Titre11, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtId_trans, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNom_trans, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTel_trans, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAdresse_trans, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtMail_trans, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jToolBar49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1789,14 +1847,141 @@ public class ParamFRM extends javax.swing.JPanel {
             prov.setId_province(txtID_Province.getText());
             prov.setDescription_province(txtDesignation_Province.getText());
             if (prov.Enregsitrer()) {
-                JOptionPane.showMessageDialog(null,"Succès", "Province Message", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Enregistré avec Succès", "Province Message", JOptionPane.INFORMATION_MESSAGE);
+                ClsHelper.Load_CmbBox(cmbProvince, "SELECT description_province FROM t_province");
             }
-        } 
-        catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Erreur "+ e.getMessage(), "Province Entry Error", JOptionPane.WARNING_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur :\n" + e.getMessage(), "Province Entry Error", JOptionPane.WARNING_MESSAGE);
         }
-        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        try {
+            dep.setCode_depot(txtID_Depot.getText());
+            dep.setDesignation_depot(txtDesignation_Depot.getText());
+            if (dep.Enregsitrer()) {
+                JOptionPane.showMessageDialog(null, "Enregistré avec Succès", "Depot Message", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur :\n" + e.getMessage(), "Depot Entry Error", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        try {
+            cat.setCode_categorie(txtID_Categorie.getText());
+            cat.setDesignation_categorie(txtDesignation_Categorie.getText());
+            if (cat.Enregsitrer()) {
+                JOptionPane.showMessageDialog(null, "Enregistré avec Succès", "Catégorie Message", JOptionPane.INFORMATION_MESSAGE);
+                ClsHelper.Load_CmbBox(cmbCategorie, "SELECT designation_categorie FROM t_categorie_prod");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur :\n" + e.getMessage(), "Catégorie Entry Error", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        try {
+            prod.setCode_produit(txtID_Province.getText());
+            prod.setDesignation_produit(txtDesignation_Province.getText());
+            cat.setDesignation_categorie(cmbCategorie.getSelectedItem().toString());
+            prod.setCategorie_Prod(cat);
+            if (prod.Enregsitrer()) {
+                JOptionPane.showMessageDialog(null, "Enregistré avec Succès", "Produit Message", JOptionPane.INFORMATION_MESSAGE);
+                ClsHelper.Load_CmbBox(cmbCategorie, "SELECT designation_categorie FROM t_categorie_prod");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur :\n" + e.getMessage(), "Produit Entry Error", JOptionPane.WARNING_MESSAGE);
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        try {
+            ville.setId_ville(txtID_Ville.getText());
+            ville.setDescription_ville(txtDesignation_Ville.getText());
+            prov.setDescription_province(cmbProvince.getSelectedItem().toString());
+            ville.setProvince(prov);
+            if (ville.Enregsitrer()) {
+                JOptionPane.showMessageDialog(null, "Enregistré avec Succès", "Ville Message", JOptionPane.INFORMATION_MESSAGE);
+                ClsHelper.Load_CmbBox(cmbVille, "SELECT description_ville FROM t_ville");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur :\n" + e.getMessage(), "Ville Entry Error", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        try {
+            zone.setId_zone(txtId_Zone.getText());
+            zone.setDescr_zone(txtDesination_Zone.getText());
+            zone.setTelephone(txtTel_Zone.getText());
+            zone.setAdresse(txtAdresse_zone.getText());
+            ville.setDescription_ville(cmbVille.getSelectedItem().toString());
+            zone.setVille(ville);
+            if (zone.Enregsitrer()) {
+                JOptionPane.showMessageDialog(null, "Enregistré avec Succès", "Zone Message", JOptionPane.INFORMATION_MESSAGE);
+                ClsHelper.Load_CmbBox(cmbCategorie, "SELECT designation_categorie FROM t_categorie_prod");
+                ClsHelper.Load_CmbBox(cmbProvince, "SELECT description_province FROM t_province");
+                ClsHelper.Load_CmbBox(cmbVille, "SELECT description_ville FROM t_ville");
+                ClsHelper.Load_CmbBox(cmbzone, "SELECT descr_zone FROM t_zone");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur :\n" + e.getMessage(), "Zone Entry Error", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton24ActionPerformed
+
+    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+        try {
+            structure.setId_structure(txtId_Zone.getText());
+            structure.setDescr_structure(txtDesination_Zone.getText());
+            structure.setTelephone(txtTel_Zone.getText());
+            structure.setAdresse(txtAdresse_zone.getText());
+            zone.setDescr_zone(cmbzone.getSelectedItem().toString());
+            structure.setZone(zone);
+            if (structure.Enregsitrer()) {
+                JOptionPane.showMessageDialog(null, "Enregistré avec Succès", "Structure Message", JOptionPane.INFORMATION_MESSAGE);
+                ClsHelper.Load_CmbBox(cmbCategorie, "SELECT designation_categorie FROM t_categorie_prod");
+                ClsHelper.Load_CmbBox(cmbProvince, "SELECT description_province FROM t_province");
+                ClsHelper.Load_CmbBox(cmbVille, "SELECT description_ville FROM t_ville");
+                ClsHelper.Load_CmbBox(cmbzone, "SELECT descr_zone FROM t_zone");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur :\n" + e.getMessage(), "Structure Entry Error", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton30ActionPerformed
+
+    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
+        try {
+            fourn.setCode_fournisseur(txtId_fourn.getText());
+            fourn.setNoms_fournisseur(txtNom_fourn.getText());
+            fourn.setTelephone_fournisseur(txtTel_fourn.getText());
+            fourn.setAdresse_fournisseur(txtAdresse_fourn.getText());
+            fourn.setMail_fournisseur(txtMail_fourn.getText());
+            if (fourn.Enregsitrer()) {
+                JOptionPane.showMessageDialog(null, "Enregistré avec Succès", "Fournisseur Message", JOptionPane.INFORMATION_MESSAGE);
+                ClsHelper.Load_CmbBox(cmbCategorie, "SELECT designation_categorie FROM t_categorie_prod");
+                ClsHelper.Load_CmbBox(cmbProvince, "SELECT description_province FROM t_province");
+                ClsHelper.Load_CmbBox(cmbVille, "SELECT description_ville FROM t_ville");
+                ClsHelper.Load_CmbBox(cmbzone, "SELECT descr_zone FROM t_zone");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur :\n" + e.getMessage(), "Fournisseur Entry Error", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton33ActionPerformed
+
+    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
+        try {
+            transporteur.setCode_transporteur(txtId_trans.getText());
+            transporteur.setDescr_transporteur(txtNom_trans.getText());
+            transporteur.setNum_phone(txtTel_trans.getText());
+            transporteur.setAdresse_transporteur(txtAdresse_trans.getText());
+            if (transporteur.Enregsitrer()) {
+                JOptionPane.showMessageDialog(null, "Enregistré avec Succès", "Transporteur Message", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur :\n" + e.getMessage(), "Transporteur Entry Error", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton36ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1809,6 +1994,10 @@ public class ParamFRM extends javax.swing.JPanel {
     private javax.swing.JLabel Titre6;
     private javax.swing.JLabel Titre7;
     private javax.swing.JLabel Titre9;
+    private javax.swing.JComboBox<String> cmbCategorie;
+    private javax.swing.JComboBox<String> cmbProvince;
+    private javax.swing.JComboBox<String> cmbVille;
+    private javax.swing.JComboBox<String> cmbzone;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton18;
@@ -1836,10 +2025,6 @@ public class ParamFRM extends javax.swing.JPanel {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1952,39 +2137,39 @@ public class ParamFRM extends javax.swing.JPanel {
     private org.jdesktop.swingx.JXTable jXTable14;
     private org.jdesktop.swingx.JXTable jXTable15;
     private org.jdesktop.swingx.JXTable jXTable9;
-    private org.jdesktop.swingx.JXTextField jXTextField11;
-    private org.jdesktop.swingx.JXTextField jXTextField12;
     private org.jdesktop.swingx.JXTextField jXTextField13;
     private org.jdesktop.swingx.JXTextField jXTextField14;
-    private org.jdesktop.swingx.JXTextField jXTextField15;
-    private org.jdesktop.swingx.JXTextField jXTextField16;
-    private org.jdesktop.swingx.JXTextField jXTextField19;
-    private org.jdesktop.swingx.JXTextField jXTextField20;
-    private org.jdesktop.swingx.JXTextField jXTextField21;
-    private org.jdesktop.swingx.JXTextField jXTextField22;
-    private org.jdesktop.swingx.JXTextField jXTextField23;
-    private org.jdesktop.swingx.JXTextField jXTextField24;
-    private org.jdesktop.swingx.JXTextField jXTextField25;
-    private org.jdesktop.swingx.JXTextField jXTextField26;
-    private org.jdesktop.swingx.JXTextField jXTextField27;
-    private org.jdesktop.swingx.JXTextField jXTextField28;
-    private org.jdesktop.swingx.JXTextField jXTextField29;
-    private org.jdesktop.swingx.JXTextField jXTextField30;
-    private org.jdesktop.swingx.JXTextField jXTextField31;
-    private org.jdesktop.swingx.JXTextField jXTextField32;
-    private org.jdesktop.swingx.JXTextField jXTextField33;
-    private org.jdesktop.swingx.JXTextField jXTextField34;
     private org.jdesktop.swingx.JXTable tStatut;
     private org.jdesktop.swingx.JXTable tType;
     private org.jdesktop.swingx.JXTable tZone;
+    private org.jdesktop.swingx.JXTextField txtAdresse_fourn;
+    private org.jdesktop.swingx.JXTextField txtAdresse_structure;
+    private org.jdesktop.swingx.JXTextField txtAdresse_trans;
+    private org.jdesktop.swingx.JXTextField txtAdresse_zone;
+    private org.jdesktop.swingx.JXTextField txtDesignation_Categorie;
+    private org.jdesktop.swingx.JXTextField txtDesignation_Depot;
     private org.jdesktop.swingx.JXTextField txtDesignation_Province;
-    private org.jdesktop.swingx.JXTextField txtDesignation_Type;
-    private org.jdesktop.swingx.JXTextField txtDesignation_Zone;
+    private org.jdesktop.swingx.JXTextField txtDesignation_Ville;
+    private org.jdesktop.swingx.JXTextField txtDesignation_structure;
+    private org.jdesktop.swingx.JXTextField txtDesination_Zone;
+    private org.jdesktop.swingx.JXTextField txtID_Categorie;
+    private org.jdesktop.swingx.JXTextField txtID_Depot;
     private org.jdesktop.swingx.JXTextField txtID_Province;
-    private org.jdesktop.swingx.JXTextField txtID_Type;
-    private org.jdesktop.swingx.JXTextField txtID_Zone;
+    private org.jdesktop.swingx.JXTextField txtID_Ville;
+    private org.jdesktop.swingx.JXTextField txtId_Zone;
+    private org.jdesktop.swingx.JXTextField txtId_fourn;
+    private org.jdesktop.swingx.JXTextField txtId_structure;
+    private org.jdesktop.swingx.JXTextField txtId_trans;
+    private org.jdesktop.swingx.JXTextField txtMail_fourn;
+    private org.jdesktop.swingx.JXTextField txtMail_trans;
+    private org.jdesktop.swingx.JXTextField txtNom_fourn;
+    private org.jdesktop.swingx.JXTextField txtNom_trans;
     private org.jdesktop.swingx.JXSearchField txtRecherche_Statut;
     private org.jdesktop.swingx.JXSearchField txtRecherche_Type;
     private org.jdesktop.swingx.JXSearchField txtRecherche_Zone;
+    private org.jdesktop.swingx.JXTextField txtTel_Zone;
+    private org.jdesktop.swingx.JXTextField txtTel_fourn;
+    private org.jdesktop.swingx.JXTextField txtTel_structure;
+    private org.jdesktop.swingx.JXTextField txtTel_trans;
     // End of variables declaration//GEN-END:variables
 }
