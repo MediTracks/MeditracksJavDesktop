@@ -120,9 +120,8 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jXTextField9" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jXTextField10" alignment="0" pref="313" max="32767" attributes="0"/>
-                                          <Component id="jPasswordField1" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtUsername" alignment="0" pref="313" max="32767" attributes="0"/>
+                                          <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
@@ -138,19 +137,17 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="Titre3" min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="Titre3" min="-2" pref="58" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jXTextField9" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txtUsername" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jXTextField10" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txtPassword" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPasswordField1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Component id="jToolBar21" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
                   </Group>
@@ -167,16 +164,7 @@
                 <Property name="text" type="java.lang.String" value="Utilisateur"/>
               </Properties>
             </Component>
-            <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField9">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
-                </Property>
-                <Property name="prompt" type="java.lang.String" value="ID"/>
-                <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
-              </Properties>
-            </Component>
-            <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField10">
+            <Component class="org.jdesktop.swingx.JXTextField" name="txtUsername">
               <Properties>
                 <Property name="toolTipText" type="java.lang.String" value="Nom d&apos;utilisateur"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -186,7 +174,7 @@
                 <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+            <Component class="javax.swing.JPasswordField" name="txtPassword">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
@@ -217,9 +205,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="28" max="32767" attributes="0"/>
-                          <Component id="Admin" min="-2" pref="89" max="-2" attributes="0"/>
+                          <Component id="chB_admin" min="-2" pref="89" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="Collecteur" min="-2" max="-2" attributes="0"/>
+                          <Component id="chB_Collecteur" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -229,16 +217,16 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="Admin" max="32767" attributes="0"/>
-                              <Component id="Collecteur" max="32767" attributes="0"/>
+                              <Component id="chB_admin" max="32767" attributes="0"/>
+                              <Component id="chB_Collecteur" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="8" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JCheckBox" name="Collecteur">
+                <Component class="javax.swing.JCheckBox" name="chB_Collecteur">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Light" size="14" style="1"/>
@@ -247,7 +235,7 @@
                     <Property name="opaque" type="boolean" value="false"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="Admin">
+                <Component class="javax.swing.JCheckBox" name="chB_admin">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Light" size="14" style="1"/>
@@ -291,6 +279,9 @@
                         <Property name="focusable" type="boolean" value="false"/>
                         <Property name="opaque" type="boolean" value="false"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton15ActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -391,20 +382,9 @@
               <SubComponents>
                 <Component class="org.jdesktop.swingx.JXTable" name="jXTable2">
                   <Properties>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="4">
-                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                      </Table>
-                    </Property>
-                    <Property name="columnControlVisible" type="boolean" value="true"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
-                    <Property name="rowHeight" type="int" value="20"/>
-                    <Property name="showGrid" type="boolean" value="true"/>
                     <Property name="showVerticalLines" type="boolean" value="false"/>
                   </Properties>
                 </Component>
