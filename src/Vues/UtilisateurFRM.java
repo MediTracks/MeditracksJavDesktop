@@ -5,12 +5,17 @@
  */
 package Vues;
 
+import Controller.ClsHelper;
+import javax.swing.JOptionPane;
+import model.ClsLogin;
+
 /**
  *
  * @author CRYONI-RIEK
  */
 public class UtilisateurFRM extends javax.swing.JPanel {
 
+    ClsLogin log = new ClsLogin();
     /**
      * Creates new form UtilisateurFRM
      */
@@ -30,12 +35,11 @@ public class UtilisateurFRM extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Titre3 = new javax.swing.JLabel();
-        jXTextField9 = new org.jdesktop.swingx.JXTextField();
-        jXTextField10 = new org.jdesktop.swingx.JXTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        txtUsername = new org.jdesktop.swingx.JXTextField();
+        txtPassword = new javax.swing.JPasswordField();
         jPanel4 = new javax.swing.JPanel();
-        Collecteur = new javax.swing.JCheckBox();
-        Admin = new javax.swing.JCheckBox();
+        chB_Collecteur = new javax.swing.JCheckBox();
+        chB_admin = new javax.swing.JCheckBox();
         jToolBar21 = new javax.swing.JToolBar();
         jToolBar22 = new javax.swing.JToolBar();
         jButton15 = new javax.swing.JButton();
@@ -63,28 +67,24 @@ public class UtilisateurFRM extends javax.swing.JPanel {
         Titre3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Titre3.setText("Utilisateur");
 
-        jXTextField9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField9.setPrompt("ID");
-        jXTextField9.setPromptFontStyle(new java.lang.Integer(0));
+        txtUsername.setToolTipText("Nom d'utilisateur");
+        txtUsername.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtUsername.setPrompt("Nom d'utilisateur");
+        txtUsername.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField10.setToolTipText("Nom d'utilisateur");
-        jXTextField10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField10.setPrompt("Nom d'utilisateur");
-        jXTextField10.setPromptFontStyle(new java.lang.Integer(0));
-
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mot de passe", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        txtPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtPassword.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mot de passe", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Niveau d'accès", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 0, 12))); // NOI18N
         jPanel4.setOpaque(false);
 
-        Collecteur.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
-        Collecteur.setText("Collecteur");
-        Collecteur.setOpaque(false);
+        chB_Collecteur.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        chB_Collecteur.setText("Collecteur");
+        chB_Collecteur.setOpaque(false);
 
-        Admin.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
-        Admin.setText("Admin");
-        Admin.setOpaque(false);
+        chB_admin.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        chB_admin.setText("Admin");
+        chB_admin.setOpaque(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -92,9 +92,9 @@ public class UtilisateurFRM extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(28, Short.MAX_VALUE)
-                .addComponent(Admin, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(chB_admin, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(Collecteur)
+                .addComponent(chB_Collecteur)
                 .addGap(26, 26, 26))
         );
         jPanel4Layout.setVerticalGroup(
@@ -102,9 +102,9 @@ public class UtilisateurFRM extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Admin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Collecteur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(8, Short.MAX_VALUE))
+                    .addComponent(chB_admin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(chB_Collecteur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jToolBar21.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -119,6 +119,11 @@ public class UtilisateurFRM extends javax.swing.JPanel {
         jButton15.setText("Enregistrer");
         jButton15.setFocusable(false);
         jButton15.setOpaque(false);
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
         jToolBar22.add(jButton15);
 
         jToolBar21.add(jToolBar22);
@@ -173,9 +178,8 @@ public class UtilisateurFRM extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addGap(54, 54, 54)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jXTextField9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jXTextField10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(txtUsername, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
+                                    .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(18, 18, 18)
                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -184,38 +188,22 @@ public class UtilisateurFRM extends javax.swing.JPanel {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(Titre3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Titre3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jXTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jXTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(45, 45, 45)
                 .addComponent(jToolBar21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 27, Short.MAX_VALUE))
         );
 
         jPanel25.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jXTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jXTable2.setColumnControlVisible(true);
         jXTable2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTable2.setRowHeight(20);
-        jXTable2.setShowGrid(true);
         jXTable2.setShowVerticalLines(false);
         jScrollPane2.setViewportView(jXTable2);
 
@@ -281,55 +269,58 @@ public class UtilisateurFRM extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        try {
+            if (chB_admin.isSelected()) {
+                ClsLogin log = new ClsLogin();
+                log.setNom_utilisateur(txtUsername.getText());
+                log.setMot_de_passe(txtPassword.getText());
+                log.setNiveau_acces(chB_admin.getText());            
+                if (log.Enregsitrer()) {
+                    JOptionPane.showMessageDialog(null, "Enregistré avec Succès", "User Message", JOptionPane.INFORMATION_MESSAGE);
+                    ClsHelper.TextClean(txtUsername);
+                    ClsHelper.TextClean(txtPassword);
+                }
+            } else if (chB_Collecteur.isSelected()){
+                ClsLogin log = new ClsLogin();
+                log.setNom_utilisateur(txtUsername.getText());
+                log.setMot_de_passe(txtPassword.getText());
+                log.setNiveau_acces(chB_Collecteur.getText());            
+                if (log.Enregsitrer()) {
+                    JOptionPane.showMessageDialog(null, "Enregistré avec Succès", "User Message", JOptionPane.INFORMATION_MESSAGE);
+                    ClsHelper.TextClean(txtUsername);
+                    ClsHelper.TextClean(txtPassword);
+                }
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur :\n" + e.getMessage(), "User Entry Error", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton15ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox Admin;
-    private javax.swing.JCheckBox Collecteur;
     private javax.swing.JLabel Titre3;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
+    private javax.swing.JCheckBox chB_Collecteur;
+    private javax.swing.JCheckBox chB_admin;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel36;
-    private javax.swing.JPanel jPanel37;
-    private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JToolBar jToolBar17;
-    private javax.swing.JToolBar jToolBar18;
-    private javax.swing.JToolBar jToolBar19;
-    private javax.swing.JToolBar jToolBar20;
     private javax.swing.JToolBar jToolBar21;
     private javax.swing.JToolBar jToolBar22;
     private javax.swing.JToolBar jToolBar23;
     private javax.swing.JToolBar jToolBar24;
     private javax.swing.JToolBar jToolBar25;
-    private javax.swing.JToolBar jToolBar37;
-    private javax.swing.JToolBar jToolBar38;
-    private javax.swing.JToolBar jToolBar39;
-    private javax.swing.JToolBar jToolBar40;
-    private javax.swing.JToolBar jToolBar41;
     private org.jdesktop.swingx.JXSearchField jXSearchField1;
     private org.jdesktop.swingx.JXTable jXTable2;
-    private org.jdesktop.swingx.JXTextField jXTextField10;
-    private org.jdesktop.swingx.JXTextField jXTextField17;
-    private org.jdesktop.swingx.JXTextField jXTextField18;
-    private org.jdesktop.swingx.JXTextField jXTextField7;
-    private org.jdesktop.swingx.JXTextField jXTextField8;
-    private org.jdesktop.swingx.JXTextField jXTextField9;
+    private javax.swing.JPasswordField txtPassword;
+    private org.jdesktop.swingx.JXTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
