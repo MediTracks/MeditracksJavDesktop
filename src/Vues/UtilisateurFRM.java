@@ -291,8 +291,7 @@ public class UtilisateurFRM extends javax.swing.JPanel {
                     ClsHelper.TextClean(txtUsername);
                     ClsHelper.TextClean(txtPassword);
                 }
-            }
-            
+            }            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erreur :\n" + e.getMessage(), "User Entry Error", JOptionPane.WARNING_MESSAGE);
         }
