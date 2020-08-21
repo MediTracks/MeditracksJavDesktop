@@ -130,7 +130,7 @@ public class ParamFRM extends javax.swing.JPanel {
         jPanel28 = new javax.swing.JPanel();
         jPanel29 = new javax.swing.JPanel();
         jXTextField13 = new org.jdesktop.swingx.JXTextField();
-        jXTextField14 = new org.jdesktop.swingx.JXTextField();
+        txt_designation_produit = new org.jdesktop.swingx.JXTextField();
         jToolBar29 = new javax.swing.JToolBar();
         jToolBar30 = new javax.swing.JToolBar();
         jButton21 = new javax.swing.JButton();
@@ -922,10 +922,10 @@ public class ParamFRM extends javax.swing.JPanel {
         jXTextField13.setPrompt("ID");
         jXTextField13.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField14.setToolTipText("designation");
-        jXTextField14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField14.setPrompt("designation");
-        jXTextField14.setPromptFontStyle(new java.lang.Integer(0));
+        txt_designation_produit.setToolTipText("designation");
+        txt_designation_produit.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_designation_produit.setPrompt("designation");
+        txt_designation_produit.setPromptFontStyle(new java.lang.Integer(0));
 
         jToolBar29.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar29.setRollover(true);
@@ -1009,7 +1009,7 @@ public class ParamFRM extends javax.swing.JPanel {
                 .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToolBar29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jXTextField13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jXTextField14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_designation_produit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cmbCategorie, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(246, 246, 246))
             .addComponent(Titre6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1021,7 +1021,7 @@ public class ParamFRM extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jXTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jXTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txt_designation_produit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cmbCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
@@ -1883,7 +1883,7 @@ public class ParamFRM extends javax.swing.JPanel {
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         try {
             prod.setCode_produit(txtID_Province.getText());
-            prod.setDesignation_produit(txtDesignation_Province.getText());
+            prod.setDesignation_produit(txt_designation_produit.getText());
             cat.setDesignation_categorie(cmbCategorie.getSelectedItem().toString());
             prod.setCategorie_Prod(cat);
             if (prod.Enregsitrer()) {
@@ -2000,6 +2000,12 @@ public class ParamFRM extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cmbzone;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton20;
@@ -2009,6 +2015,9 @@ public class ParamFRM extends javax.swing.JPanel {
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton31;
@@ -2050,7 +2059,14 @@ public class ParamFRM extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
@@ -2064,6 +2080,7 @@ public class ParamFRM extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel40;
     private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel42;
@@ -2074,6 +2091,7 @@ public class ParamFRM extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel47;
     private javax.swing.JPanel jPanel48;
     private javax.swing.JPanel jPanel49;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel50;
     private javax.swing.JPanel jPanel51;
     private javax.swing.JPanel jPanel7;
@@ -2089,6 +2107,7 @@ public class ParamFRM extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JToolBar jToolBar10;
     private javax.swing.JToolBar jToolBar11;
     private javax.swing.JToolBar jToolBar12;
@@ -2096,6 +2115,14 @@ public class ParamFRM extends javax.swing.JPanel {
     private javax.swing.JToolBar jToolBar14;
     private javax.swing.JToolBar jToolBar15;
     private javax.swing.JToolBar jToolBar16;
+    private javax.swing.JToolBar jToolBar17;
+    private javax.swing.JToolBar jToolBar18;
+    private javax.swing.JToolBar jToolBar19;
+    private javax.swing.JToolBar jToolBar20;
+    private javax.swing.JToolBar jToolBar21;
+    private javax.swing.JToolBar jToolBar22;
+    private javax.swing.JToolBar jToolBar23;
+    private javax.swing.JToolBar jToolBar24;
     private javax.swing.JToolBar jToolBar25;
     private javax.swing.JToolBar jToolBar26;
     private javax.swing.JToolBar jToolBar27;
@@ -2108,6 +2135,9 @@ public class ParamFRM extends javax.swing.JPanel {
     private javax.swing.JToolBar jToolBar34;
     private javax.swing.JToolBar jToolBar35;
     private javax.swing.JToolBar jToolBar36;
+    private javax.swing.JToolBar jToolBar37;
+    private javax.swing.JToolBar jToolBar38;
+    private javax.swing.JToolBar jToolBar39;
     private javax.swing.JToolBar jToolBar4;
     private javax.swing.JToolBar jToolBar41;
     private javax.swing.JToolBar jToolBar42;
@@ -2123,6 +2153,7 @@ public class ParamFRM extends javax.swing.JPanel {
     private javax.swing.JToolBar jToolBar51;
     private javax.swing.JToolBar jToolBar52;
     private javax.swing.JToolBar jToolBar6;
+    private javax.swing.JToolBar jToolBar7;
     private javax.swing.JToolBar jToolBar8;
     private javax.swing.JToolBar jToolBar9;
     private org.jdesktop.swingx.JXSearchField jXSearchField10;
@@ -2138,7 +2169,6 @@ public class ParamFRM extends javax.swing.JPanel {
     private org.jdesktop.swingx.JXTable jXTable15;
     private org.jdesktop.swingx.JXTable jXTable9;
     private org.jdesktop.swingx.JXTextField jXTextField13;
-    private org.jdesktop.swingx.JXTextField jXTextField14;
     private org.jdesktop.swingx.JXTable tStatut;
     private org.jdesktop.swingx.JXTable tType;
     private org.jdesktop.swingx.JXTable tZone;
@@ -2147,14 +2177,20 @@ public class ParamFRM extends javax.swing.JPanel {
     private org.jdesktop.swingx.JXTextField txtAdresse_trans;
     private org.jdesktop.swingx.JXTextField txtAdresse_zone;
     private org.jdesktop.swingx.JXTextField txtDesignation_Categorie;
+    private org.jdesktop.swingx.JXTextField txtDesignation_Categorie1;
+    private org.jdesktop.swingx.JXTextField txtDesignation_Categorie2;
     private org.jdesktop.swingx.JXTextField txtDesignation_Depot;
     private org.jdesktop.swingx.JXTextField txtDesignation_Province;
+    private org.jdesktop.swingx.JXTextField txtDesignation_Province1;
     private org.jdesktop.swingx.JXTextField txtDesignation_Ville;
     private org.jdesktop.swingx.JXTextField txtDesignation_structure;
     private org.jdesktop.swingx.JXTextField txtDesination_Zone;
     private org.jdesktop.swingx.JXTextField txtID_Categorie;
+    private org.jdesktop.swingx.JXTextField txtID_Categorie1;
+    private org.jdesktop.swingx.JXTextField txtID_Categorie2;
     private org.jdesktop.swingx.JXTextField txtID_Depot;
     private org.jdesktop.swingx.JXTextField txtID_Province;
+    private org.jdesktop.swingx.JXTextField txtID_Province1;
     private org.jdesktop.swingx.JXTextField txtID_Ville;
     private org.jdesktop.swingx.JXTextField txtId_Zone;
     private org.jdesktop.swingx.JXTextField txtId_fourn;
@@ -2171,5 +2207,6 @@ public class ParamFRM extends javax.swing.JPanel {
     private org.jdesktop.swingx.JXTextField txtTel_fourn;
     private org.jdesktop.swingx.JXTextField txtTel_structure;
     private org.jdesktop.swingx.JXTextField txtTel_trans;
+    private org.jdesktop.swingx.JXTextField txt_designation_produit;
     // End of variables declaration//GEN-END:variables
 }

@@ -178,13 +178,13 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jXTextField42" min="-2" pref="280" max="-2" attributes="0"/>
-                              <Component id="jXTextField41" alignment="1" min="-2" pref="280" max="-2" attributes="0"/>
+                              <Component id="txt_designation" min="-2" pref="280" max="-2" attributes="0"/>
+                              <Component id="txt_id" alignment="1" min="-2" pref="280" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jDateChooser2" max="32767" attributes="0"/>
-                              <Component id="jComboBox35" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
+                              <Component id="date_commande" max="32767" attributes="0"/>
+                              <Component id="cmbStructure" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                       </Group>
@@ -202,13 +202,13 @@
                           <Component id="jLabel5" min="-2" pref="56" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jXTextField41" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jDateChooser2" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txt_id" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="date_commande" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jXTextField42" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jComboBox35" min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="txt_designation" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="cmbStructure" min="-2" pref="46" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="jToolBar36" min="-2" pref="48" max="-2" attributes="0"/>
@@ -218,7 +218,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField41">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txt_id">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -227,7 +227,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField42">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txt_designation">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -236,9 +236,9 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
+                <Component class="com.toedter.calendar.JDateChooser" name="date_commande">
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox35">
+                <Component class="javax.swing.JComboBox" name="cmbStructure">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -511,21 +511,21 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jXTextField47" alignment="1" min="-2" pref="280" max="-2" attributes="0"/>
-                                      <Component id="jXTextField46" alignment="1" min="-2" pref="280" max="-2" attributes="0"/>
+                                      <Component id="txt_description" alignment="1" min="-2" pref="280" max="-2" attributes="0"/>
+                                      <Component id="num_commande" alignment="1" min="-2" pref="280" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jDateChooser4" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
-                                      <Component id="jXTextField48" min="-2" pref="139" max="-2" attributes="0"/>
+                                      <Component id="date_distributuion" alignment="0" min="-2" pref="278" max="-2" attributes="0"/>
+                                      <Component id="qte" min="-2" pref="139" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jComboBox37" min="-2" pref="278" max="-2" attributes="0"/>
+                                  <Component id="cmb_approvisionnement" min="-2" pref="278" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jComboBox38" min="-2" pref="278" max="-2" attributes="0"/>
-                                      <Component id="jComboBox36" min="-2" pref="278" max="-2" attributes="0"/>
+                                      <Component id="cmb_commande" min="-2" pref="278" max="-2" attributes="0"/>
+                                      <Component id="cmd_transporteur" min="-2" pref="278" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -540,22 +540,22 @@
                           <Component id="jLabel9" min="-2" pref="56" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jXTextField46" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jDateChooser4" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="num_commande" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="date_distributuion" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jXTextField47" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jXTextField48" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txt_description" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="qte" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox36" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
-                              <Component id="jComboBox37" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="cmd_transporteur" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="cmb_approvisionnement" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jComboBox38" min="-2" pref="46" max="-2" attributes="0"/>
-                          <EmptySpace pref="7" max="32767" attributes="0"/>
+                          <Component id="cmb_commande" min="-2" pref="46" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="jToolBar44" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -563,7 +563,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField46">
+                <Component class="org.jdesktop.swingx.JXTextField" name="num_commande">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -572,7 +572,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField47">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txt_description">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -581,9 +581,9 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser4">
+                <Component class="com.toedter.calendar.JDateChooser" name="date_distributuion">
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox36">
+                <Component class="javax.swing.JComboBox" name="cmd_transporteur">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -697,7 +697,7 @@
                     <Property name="text" type="java.lang.String" value="Distribution"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox37">
+                <Component class="javax.swing.JComboBox" name="cmb_approvisionnement">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -718,7 +718,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField48">
+                <Component class="org.jdesktop.swingx.JXTextField" name="qte">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -727,7 +727,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox38">
+                <Component class="javax.swing.JComboBox" name="cmb_commande">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
