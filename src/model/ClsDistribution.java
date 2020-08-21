@@ -12,6 +12,7 @@ import java.sql.Date;
  * @author Brain
  */
 public class ClsDistribution  implements IActionManager{
+    private String num_distribution;
     private Date date_distribution;
     private ClsTransporteur transporteur;
     private ClsCommandes commandes;
@@ -22,7 +23,8 @@ public class ClsDistribution  implements IActionManager{
     public ClsDistribution() {
     }
 
-    public ClsDistribution(Date date_distribution, ClsTransporteur transporteur, ClsCommandes commandes, ClsApprovisionnement approvisionnement, double qte_demande, String descr_distribution) {
+    public ClsDistribution(String num_distribution, Date date_distribution, ClsTransporteur transporteur, ClsCommandes commandes, ClsApprovisionnement approvisionnement, double qte_demande, String descr_distribution) {
+        this.num_distribution = num_distribution;
         this.date_distribution = date_distribution;
         this.transporteur = transporteur;
         this.commandes = commandes;
@@ -30,6 +32,16 @@ public class ClsDistribution  implements IActionManager{
         this.qte_demande = qte_demande;
         this.descr_distribution = descr_distribution;
     }
+
+    public String getNum_distribution() {
+        return num_distribution;
+    }
+
+    public void setNum_distribution(String num_distribution) {
+        this.num_distribution = num_distribution;
+    }
+
+    
 
     public Date getDate_distribution() {
         return date_distribution;
