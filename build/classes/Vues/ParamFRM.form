@@ -1392,7 +1392,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jToolBar29" alignment="0" max="32767" attributes="0"/>
                               <Component id="jXTextField13" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXTextField14" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txt_designation_produit" alignment="0" max="32767" attributes="0"/>
                               <Component id="cmbCategorie" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
@@ -1407,7 +1407,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jXTextField13" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jXTextField14" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txt_designation_produit" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="cmbCategorie" min="-2" pref="46" max="-2" attributes="0"/>
                           <EmptySpace pref="8" max="32767" attributes="0"/>
@@ -1429,7 +1429,7 @@
                     <Property name="promptFontStyle" type="java.lang.Integer" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField14">
+                <Component class="org.jdesktop.swingx.JXTextField" name="txt_designation_produit">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value="designation"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">

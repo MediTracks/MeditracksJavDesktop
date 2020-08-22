@@ -18,19 +18,29 @@ public class ClsCommandes  implements IActionManager{
     private float qte;
     private String alerte_level;
     private Date date_commande;
-    private ClsStructure structure;
+    private String id_structure;
 
     public ClsCommandes() {
     }
 
-    public ClsCommandes(String code_produit, float qte, String alerte_level, Date date_commande, ClsStructure structure) {
+    public ClsCommandes(String code_produit, float qte, String alerte_level, Date date_commande, String id_structure) {
         this.code_produit = code_produit;
         this.qte = qte;
         this.alerte_level = alerte_level;
         this.date_commande = date_commande;
-        this.structure = structure;
+        this.id_structure = id_structure;
     }
 
+    public String getId_structure() {
+        return id_structure;
+    }
+
+    public void setId_structure(String id_structure) {
+        this.id_structure = id_structure;
+    }
+
+    
+    
     public String getCode_produit() {
         return code_produit;
     }
@@ -62,14 +72,7 @@ public class ClsCommandes  implements IActionManager{
     public void setDate_commande(Date date_commande) {
         this.date_commande = date_commande;
     }
-
-    public ClsStructure getStructure() {
-        return structure;
-    }
-
-    public void setStructure(ClsStructure structure) {
-        this.structure = structure;
-    }
+    
     
     @Override
     public boolean Enregsitrer() throws Exception {

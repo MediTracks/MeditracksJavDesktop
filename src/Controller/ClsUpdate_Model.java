@@ -71,12 +71,12 @@ public class ClsUpdate_Model {
         }
         else if (obj instanceof ClsCommandes) {
             ClsCommandes commandes = (ClsCommandes)obj;
-            PreparedStatement ps = DbConnect.connectDb().prepareCall("EXECUTE inserer_commande ?,?,?,?,?");
+            PreparedStatement ps = DbConnect.connectDb().prepareCall("EXECUTE inserer_commande ?,?,?,?,(select id_structure from t_structure where descr_structure = ?)");
             ps.setString(1, commandes.getCode_produit());
             ps.setDouble(2, commandes.getQte());
             ps.setString(3, commandes.getAlerte_level());
             ps.setDate(4, commandes.getDate_commande());
-            ps.setString(5, commandes.getStructure().getDescr_structure());
+            ps.setString(5, commandes.getId_structure());
             ps.executeUpdate();
             ps.close();
             DbConnect.disconnectDb();
@@ -109,13 +109,14 @@ public class ClsUpdate_Model {
         }
         else if (obj instanceof ClsDistribution) {
             ClsDistribution distribution = (ClsDistribution)obj;
-            PreparedStatement ps = DbConnect.connectDb().prepareCall("EXECUTE enregistrer_distribution ?,?,?,?,?,?");
-            ps.setDate(1, distribution.getDate_distribution());
-            ps.setString(2, distribution.getTransporteur().getDescr_transporteur());
-            ps.setString(3, distribution.getCommandes().getCode_produit());//error codeCommande not found
-            ps.setString(4, distribution.getApprovisionnement().getCode_approvisionnement());            
-            ps.setDouble(5, distribution.getQte_demande());
-            ps.setString(6, distribution.getDescr_distribution());
+            PreparedStatement ps = DbConnect.connectDb().prepareCall("EXECUTE enregistrer_distribution ?,?,?,?,?,?,?");
+            ps.setString(1, distribution.getNum_distribution());
+            ps.setDate(2, distribution.getDate_distribution());
+            ps.setString(3, distribution.getTransporteur().getDescr_transporteur());
+            ps.setString(4, distribution.getCommandes().getCode_produit());//error codeCommande not found
+            ps.setString(5, distribution.getApprovisionnement().getCode_approvisionnement());            
+            ps.setDouble(6, distribution.getQte_demande());
+            ps.setString(7, distribution.getDescr_distribution());
             ps.executeUpdate();
             ps.close();
             DbConnect.disconnectDb();

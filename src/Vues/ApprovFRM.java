@@ -5,12 +5,14 @@
  */
 package Vues;
 
+import model.ClsApprovisionnement;
+
 /**
  *
  * @author CRYONI-RIEK
  */
 public class ApprovFRM extends javax.swing.JPanel {
-
+    ClsApprovisionnement approv = null;
     /**
      * Creates new form UtilisateurFRM
      */
@@ -133,7 +135,7 @@ public class ApprovFRM extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jToolBar21, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE)
+                    .addComponent(jToolBar21, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jXTextField9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

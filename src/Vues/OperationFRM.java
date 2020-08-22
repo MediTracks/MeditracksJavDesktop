@@ -5,17 +5,30 @@
  */
 package Vues;
 
+import Controller.ClsHelper;
+import java.sql.Date;
+import javax.swing.JOptionPane;
+import model.ClsCommandes;
+import model.ClsStructure;
+
 /**
  *
  * @author CRYONI-RIEK
  */
 public class OperationFRM extends javax.swing.JPanel {
-
+    ClsCommandes cmd = null;
+    ClsStructure structure = null;
     /**
      * Creates new form ResponFRM
      */
     public OperationFRM() {
         initComponents();
+        try {
+            ClsHelper.Load_CmbBox(cmbStructure, "SELECT descr_structure FROM t_structure");
+            ClsHelper.Load_CmbBox(cmb_produit, "SELECT designation_produit FROM t_produit");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur " + e.getMessage(), "Structure Entry Error", JOptionPane.WARNING_MESSAGE);
+        }
     }
 
     
@@ -34,10 +47,9 @@ public class OperationFRM extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jXTable2 = new org.jdesktop.swingx.JXTable();
         jPanel26 = new javax.swing.JPanel();
-        jXTextField41 = new org.jdesktop.swingx.JXTextField();
-        jXTextField42 = new org.jdesktop.swingx.JXTextField();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
-        jComboBox35 = new javax.swing.JComboBox<>();
+        txt_qte = new org.jdesktop.swingx.JXTextField();
+        date_commande = new com.toedter.calendar.JDateChooser();
+        cmbStructure = new javax.swing.JComboBox<>();
         jToolBar36 = new javax.swing.JToolBar();
         jToolBar37 = new javax.swing.JToolBar();
         jButton19 = new javax.swing.JButton();
@@ -46,6 +58,8 @@ public class OperationFRM extends javax.swing.JPanel {
         jToolBar39 = new javax.swing.JToolBar();
         jXSearchField2 = new org.jdesktop.swingx.JXSearchField();
         jLabel5 = new javax.swing.JLabel();
+        txt_alerte = new org.jdesktop.swingx.JXTextField();
+        cmb_produit = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -53,10 +67,10 @@ public class OperationFRM extends javax.swing.JPanel {
         jScrollPane4 = new javax.swing.JScrollPane();
         jXTable4 = new org.jdesktop.swingx.JXTable();
         jPanel30 = new javax.swing.JPanel();
-        jXTextField46 = new org.jdesktop.swingx.JXTextField();
-        jXTextField47 = new org.jdesktop.swingx.JXTextField();
-        jDateChooser4 = new com.toedter.calendar.JDateChooser();
-        jComboBox36 = new javax.swing.JComboBox<>();
+        num_commande = new org.jdesktop.swingx.JXTextField();
+        txt_description = new org.jdesktop.swingx.JXTextField();
+        date_distributuion = new com.toedter.calendar.JDateChooser();
+        cmd_transporteur = new javax.swing.JComboBox<>();
         jToolBar44 = new javax.swing.JToolBar();
         jToolBar45 = new javax.swing.JToolBar();
         jButton23 = new javax.swing.JButton();
@@ -65,9 +79,9 @@ public class OperationFRM extends javax.swing.JPanel {
         jToolBar47 = new javax.swing.JToolBar();
         jXSearchField4 = new org.jdesktop.swingx.JXSearchField();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox37 = new javax.swing.JComboBox<>();
-        jXTextField48 = new org.jdesktop.swingx.JXTextField();
-        jComboBox38 = new javax.swing.JComboBox<>();
+        cmb_approvisionnement = new javax.swing.JComboBox<>();
+        qte = new org.jdesktop.swingx.JXTextField();
+        cmb_commande = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
 
@@ -107,23 +121,20 @@ public class OperationFRM extends javax.swing.JPanel {
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
         );
 
         jPanel26.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel26.setOpaque(false);
 
-        jXTextField41.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField41.setPrompt("ID");
-        jXTextField41.setPromptFontStyle(new java.lang.Integer(0));
+        txt_qte.setToolTipText("qte");
+        txt_qte.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_qte.setPrompt("qte");
+        txt_qte.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField42.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField42.setPrompt("Designation");
-        jXTextField42.setPromptFontStyle(new java.lang.Integer(0));
-
-        jComboBox35.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jComboBox35.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Structure", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-        jComboBox35.setOpaque(false);
+        cmbStructure.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbStructure.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Structure", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12))); // NOI18N
+        cmbStructure.setOpaque(false);
 
         jToolBar36.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar36.setRollover(true);
@@ -137,6 +148,11 @@ public class OperationFRM extends javax.swing.JPanel {
         jButton19.setText("Enregistrer");
         jButton19.setFocusable(false);
         jButton19.setOpaque(false);
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
         jToolBar37.add(jButton19);
 
         jToolBar36.add(jToolBar37);
@@ -173,6 +189,14 @@ public class OperationFRM extends javax.swing.JPanel {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Commande");
 
+        txt_alerte.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_alerte.setPrompt("niveau d'alerte");
+        txt_alerte.setPromptFontStyle(new java.lang.Integer(0));
+
+        cmb_produit.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmb_produit.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Produit", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12))); // NOI18N
+        cmb_produit.setOpaque(false);
+
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
         jPanel26Layout.setHorizontalGroup(
@@ -183,13 +207,15 @@ public class OperationFRM extends javax.swing.JPanel {
                 .addContainerGap(129, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jXTextField42, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jXTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txt_qte, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_alerte, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmb_produit, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox35, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(date_commande, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cmbStructure, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(82, 82, 82))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
                 .addContainerGap()
@@ -199,20 +225,24 @@ public class OperationFRM extends javax.swing.JPanel {
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel26Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jXTextField41, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(date_commande, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmb_produit, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jXTextField42, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox35, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                    .addGroup(jPanel26Layout.createSequentialGroup()
+                        .addComponent(txt_qte, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_alerte, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbStructure, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(64, 64, 64)
                 .addComponent(jToolBar36, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        cmb_produit.getAccessibleContext().setAccessibleName("produit");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -289,17 +319,17 @@ public class OperationFRM extends javax.swing.JPanel {
         jPanel30.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel30.setOpaque(false);
 
-        jXTextField46.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField46.setPrompt("ID");
-        jXTextField46.setPromptFontStyle(new java.lang.Integer(0));
+        num_commande.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        num_commande.setPrompt("ID");
+        num_commande.setPromptFontStyle(new java.lang.Integer(0));
 
-        jXTextField47.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField47.setPrompt("Description");
-        jXTextField47.setPromptFontStyle(new java.lang.Integer(0));
+        txt_description.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_description.setPrompt("Description");
+        txt_description.setPromptFontStyle(new java.lang.Integer(0));
 
-        jComboBox36.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jComboBox36.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Transporteur", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-        jComboBox36.setOpaque(false);
+        cmd_transporteur.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmd_transporteur.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Transporteur", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        cmd_transporteur.setOpaque(false);
 
         jToolBar44.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar44.setRollover(true);
@@ -349,17 +379,17 @@ public class OperationFRM extends javax.swing.JPanel {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Distribution");
 
-        jComboBox37.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jComboBox37.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Approvisionnement", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-        jComboBox37.setOpaque(false);
+        cmb_approvisionnement.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmb_approvisionnement.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Approvisionnement", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        cmb_approvisionnement.setOpaque(false);
 
-        jXTextField48.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jXTextField48.setPrompt("Quantité demandé");
-        jXTextField48.setPromptFontStyle(new java.lang.Integer(0));
+        qte.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        qte.setPrompt("Quantité demandé");
+        qte.setPromptFontStyle(new java.lang.Integer(0));
 
-        jComboBox38.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jComboBox38.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Commande", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-        jComboBox38.setOpaque(false);
+        cmb_commande.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmb_commande.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Commande", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        cmb_commande.setOpaque(false);
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -378,18 +408,18 @@ public class OperationFRM extends javax.swing.JPanel {
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jXTextField47, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jXTextField46, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_description, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(num_commande, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDateChooser4, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jXTextField48, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(date_distributuion, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(qte, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel30Layout.createSequentialGroup()
-                        .addComponent(jComboBox37, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cmb_approvisionnement, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox38, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox36, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(cmb_commande, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmd_transporteur, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(82, 82, 82))
         );
         jPanel30Layout.setVerticalGroup(
@@ -399,19 +429,19 @@ public class OperationFRM extends javax.swing.JPanel {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jXTextField46, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooser4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(num_commande, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(date_distributuion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jXTextField47, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jXTextField48, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_description, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(qte, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox36, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox37, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmd_transporteur, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmb_approvisionnement, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox38, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(cmb_commande, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jToolBar44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -474,18 +504,36 @@ public class OperationFRM extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jXSearchField4ActionPerformed
 
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        try {
+            structure = new ClsStructure();
+            cmd = new ClsCommandes();
+            cmd.setCode_produit(cmb_produit.getSelectedItem().toString());
+            cmd.setQte(Float.valueOf(txt_qte.getText()));
+            cmd.setAlerte_level(txt_alerte.getText());
+            cmd.setDate_commande(new Date(date_commande.getDate().getYear(), date_commande.getDate().getYear(), date_commande.getDate().getYear()));
+            cmd.setId_structure(cmbStructure.getSelectedItem().toString());
+            if (cmd.Enregsitrer()) {
+                JOptionPane.showMessageDialog(null, "Enregistré avec Succès", "Error saving command - Message", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erreur :\n" + e.getMessage(), "Command Entry Error", JOptionPane.WARNING_MESSAGE);
+        }     
+    }//GEN-LAST:event_jButton19ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbStructure;
+    private javax.swing.JComboBox<String> cmb_approvisionnement;
+    private javax.swing.JComboBox<String> cmb_commande;
+    private javax.swing.JComboBox<String> cmb_produit;
+    private javax.swing.JComboBox<String> cmd_transporteur;
+    private com.toedter.calendar.JDateChooser date_commande;
+    private com.toedter.calendar.JDateChooser date_distributuion;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
-    private javax.swing.JComboBox<String> jComboBox35;
-    private javax.swing.JComboBox<String> jComboBox36;
-    private javax.swing.JComboBox<String> jComboBox37;
-    private javax.swing.JComboBox<String> jComboBox38;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
-    private com.toedter.calendar.JDateChooser jDateChooser4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
@@ -513,10 +561,10 @@ public class OperationFRM extends javax.swing.JPanel {
     private org.jdesktop.swingx.JXSearchField jXSearchField4;
     private org.jdesktop.swingx.JXTable jXTable2;
     private org.jdesktop.swingx.JXTable jXTable4;
-    private org.jdesktop.swingx.JXTextField jXTextField41;
-    private org.jdesktop.swingx.JXTextField jXTextField42;
-    private org.jdesktop.swingx.JXTextField jXTextField46;
-    private org.jdesktop.swingx.JXTextField jXTextField47;
-    private org.jdesktop.swingx.JXTextField jXTextField48;
+    private org.jdesktop.swingx.JXTextField num_commande;
+    private org.jdesktop.swingx.JXTextField qte;
+    private org.jdesktop.swingx.JXTextField txt_alerte;
+    private org.jdesktop.swingx.JXTextField txt_description;
+    private org.jdesktop.swingx.JXTextField txt_qte;
     // End of variables declaration//GEN-END:variables
 }
